@@ -14,7 +14,10 @@ function OurWorkContent() {
         See how we helped the University of Ottawa Faculty of Arts transform
         their brand into a bold statement for the future of arts education.
       </BodyText>
-      <Link href="/" className="mt-1 lg:mt-0">
+      <Link
+        href="/"
+        className="hover:text-ocean-orange mt-1 duration-300 lg:mt-0"
+      >
         <ArrowRightIcon className="size-7.5 xl:size-10" />
       </Link>
     </div>
@@ -39,9 +42,9 @@ function OurWorkSection() {
             src="/home/our-work/our-work-bg.png"
             alt="Our work"
             fill
-            className="absolute w-full object-cover"
+            className="absolute w-full object-cover object-[25%_80%] sm:object-center"
           />
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-linear-180 from-black/0 to-black/70">
             <div className="container-fractal h-full">
               <div className="flex h-full w-full flex-col justify-end">
                 <OurWorkContent />
