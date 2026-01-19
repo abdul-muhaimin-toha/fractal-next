@@ -11,7 +11,10 @@ function WhatWeDoSection() {
               What We Did
             </BodyText>
             <div className="flex w-full flex-col gap-25">
-              <div className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]">
+              <div
+                data-aos="fade-up"
+                className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]"
+              >
                 <div className="flex h-full w-full flex-col justify-start gap-5">
                   <BodyText variant="title2" className="text-ocean-green">
                     Video Production
@@ -38,7 +41,10 @@ function WhatWeDoSection() {
                   ></iframe>
                 </div>
               </div>
-              <div className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]">
+              <div
+                data-aos="fade-up"
+                className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]"
+              >
                 <div className="flex h-full w-full flex-col justify-start gap-5">
                   <BodyText variant="title2" className="text-ocean-green">
                     Still Image Ads
@@ -59,7 +65,10 @@ function WhatWeDoSection() {
                   />
                 </div>
               </div>
-              <div className="grid w-full grid-cols-2 gap-5 lg:grid-cols-4">
+              <div
+                data-aos="fade-up"
+                className="grid w-full grid-cols-2 gap-5 lg:grid-cols-4"
+              >
                 <Image
                   src="/our-work/grid-cards/item-1.png"
                   alt="Card"
@@ -89,7 +98,10 @@ function WhatWeDoSection() {
                   height={310}
                 />
               </div>
-              <div className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]">
+              <div
+                data-aos="fade-up"
+                className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]"
+              >
                 <div className="flex h-full w-full flex-col justify-start gap-5">
                   <BodyText variant="title2" className="text-ocean-green">
                     Web Content
@@ -114,7 +126,10 @@ function WhatWeDoSection() {
                   />
                 </div>
               </div>
-              <div className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]">
+              <div
+                data-aos="fade-up"
+                className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]"
+              >
                 <div className="flex h-full w-full flex-col justify-start gap-5">
                   <BodyText variant="title2" className="text-ocean-green">
                     Podcast Advertising

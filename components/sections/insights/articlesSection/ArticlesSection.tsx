@@ -5,7 +5,21 @@ import ArrowRightIcon from "@/components/globals/icons/ArrowRightIcon";
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Image from "next/image";
 
-const categories = [
+// ------------------- Types -------------------
+type Article = {
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+};
+
+type Category = {
+  label: string;
+  value: string;
+};
+
+// ------------------- Data -------------------
+const categories: Category[] = [
   { label: "All article", value: "all" },
   { label: "Category 1", value: "cat1" },
   { label: "Category 2", value: "cat2" },
@@ -13,7 +27,7 @@ const categories = [
   { label: "Category 4", value: "cat4" },
 ];
 
-const articles = Array.from({ length: 3 }).map(() => ({
+const articles: Article[] = Array.from({ length: 3 }).map(() => ({
   title: "Algorithmic Determinism",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -21,6 +35,7 @@ const articles = Array.from({ length: 3 }).map(() => ({
   category: "cat1",
 }));
 
+// ------------------- Components -------------------
 function CategoryTabs({
   activeCategory,
   onChange,
@@ -29,7 +44,10 @@ function CategoryTabs({
   onChange: (value: string) => void;
 }) {
   return (
-    <div className="flex w-full flex-row items-center justify-start gap-5 overflow-auto pb-3 lg:justify-center">
+    <div
+      data-aos="fade-down"
+      className="flex w-full flex-row items-center justify-start gap-5 overflow-auto pb-3 lg:justify-center"
+    >
       {categories.map((category) => {
         const isActive = activeCategory === category.value;
 
@@ -60,9 +78,12 @@ function CategoryTabs({
   );
 }
 
-function ArticleItem({ article }: { article: (typeof articles)[number] }) {
+function ArticleItem({ article }: { article: Article }) {
   return (
-    <div className="flex w-full flex-col-reverse items-center gap-6 md:flex-row md:gap-4 lg:gap-14 xl:gap-45">
+    <div
+      data-aos="fade-up"
+      className="flex group w-full flex-col-reverse items-center gap-6 md:flex-row md:gap-4 lg:gap-14 xl:gap-45"
+    >
       {/* Content */}
       <div className="flex w-full grow">
         <div className="group flex w-full flex-col gap-5 sm:gap-6 md:gap-3 lg:gap-4">
@@ -84,19 +105,19 @@ function ArticleItem({ article }: { article: (typeof articles)[number] }) {
       </div>
 
       {/* Image */}
-      <div className="relative aspect-230/230 w-full shrink-0 md:w-57.5">
+      <div className="relative overflow-hidden aspect-230/230 w-full shrink-0 md:w-57.5">
         <Image
           src={article.image}
           alt={article.title}
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-105 duration-300"
         />
       </div>
     </div>
   );
 }
 
-function ArticlesList({ articles }: { articles: typeof articles }) {
+function ArticlesList({ articles }: { articles: Article[] }) {
   return (
     <div className="grid w-full grid-cols-1 gap-12.5">
       {articles.map((article, index) => (
@@ -106,6 +127,7 @@ function ArticlesList({ articles }: { articles: typeof articles }) {
   );
 }
 
+// ------------------- Main Section -------------------
 export default function ArticlesSection() {
   const [activeCategory, setActiveCategory] = useState("all");
 

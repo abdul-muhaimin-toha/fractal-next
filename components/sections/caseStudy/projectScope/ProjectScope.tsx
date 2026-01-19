@@ -5,7 +5,10 @@ function ProjectScope() {
     <section className="bg-black">
       <div className="container-fractal">
         <div className="flex w-full flex-col items-center justify-center py-25">
-          <div className="flex w-full flex-col items-center justify-center gap-10 border-y border-y-[#EBEBEB]/40 py-25">
+          <div
+            data-aos="fade-down"
+            className="flex w-full flex-col items-center justify-center gap-10 border-y border-y-[#EBEBEB]/40 py-25"
+          >
             <BodyText variant="title1" className="w-full">
               Project Scope
             </BodyText>

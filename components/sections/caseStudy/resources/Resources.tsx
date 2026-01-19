@@ -6,7 +6,10 @@ function Resources() {
       <div className="container-fractal">
         <div className="flex w-full flex-col items-center justify-center pt-25">
           <div className="flex w-full flex-col items-center justify-center gap-15 border-t border-t-[#EBEBEB]/40 py-25">
-            <div className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row">
+            <div
+              data-aos="fade-up"
+              className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row"
+            >
               <BodyText
                 className="max-w-full grow lg:max-w-94 xl:max-w-99"
                 variant="title4"
@@ -22,7 +25,10 @@ function Resources() {
                 precarity.
               </BodyText>
             </div>
-            <div className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row">
+            <div
+              data-aos="fade-up"
+              className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row"
+            >
               <BodyText
                 className="max-w-full grow lg:max-w-94 xl:max-w-99"
                 variant="title4"
@@ -38,7 +44,10 @@ function Resources() {
                 precarity.
               </BodyText>
             </div>
-            <div className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row">
+            <div
+              data-aos="fade-up"
+              className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row"
+            >
               <BodyText
                 className="max-w-full grow lg:max-w-94 xl:max-w-99"
                 variant="title4"

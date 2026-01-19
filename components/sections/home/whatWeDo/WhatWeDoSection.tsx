@@ -51,7 +51,7 @@ function WhatWeDoSection() {
     <section className="bg-gray">
       <div className="container-fractal">
         <div className="flex w-full flex-col gap-7.5 py-15 lg:gap-15 lg:py-30">
-          <Heading className="text-black" variant="h1">
+          <Heading data-aos="fade-up" className="text-black" variant="h1">
             What We Do
           </Heading>
 

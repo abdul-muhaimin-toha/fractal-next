@@ -7,10 +7,12 @@ import TheResultsSection from "@/components/sections/caseStudy/theResults/TheRes
 import TheSolutionSection from "@/components/sections/caseStudy/theSolutions/TheSolutionSection";
 import WhatWeDoSection from "@/components/sections/caseStudy/whatWeDo/WhatWeDoSection";
 import GetInTouch from "@/components/sections/globals/getInTouch/GetInTouch";
+import OurWorkSection from "@/components/sections/globals/ourWork/OurWorkSection";
 
 export default function OurWorkDetailsPage() {
   return (
     <>
+      <OurWorkSection version="v2" />
       <OverviewSection />
       <ProjectScope />
       <TheChallengeSection />

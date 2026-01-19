@@ -44,7 +44,7 @@ function GetInTouch() {
       <div className="container-fractal">
         <div className="z-10 flex w-full flex-col gap-7.5 py-15 sm:max-w-lg sm:gap-10 md:max-w-xl md:gap-14 md:py-33.75 lg:max-w-194.5 lg:gap-20">
           {/* Heading */}
-          <div className="z-10 flex w-full flex-col gap-6">
+          <div data-aos="fade-up" className="z-10 flex w-full flex-col gap-6">
             <Heading
               className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
               variant="h1"
@@ -58,6 +58,7 @@ function GetInTouch() {
           </div>
           {/* Form Fields */}
           <form
+            data-aos="fade-up"
             onSubmit={handleSubmit(onSubmit)}
             className="z-10 flex w-full flex-col gap-7.5"
           >

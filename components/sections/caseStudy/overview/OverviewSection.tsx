@@ -4,7 +4,10 @@ function OverviewSection() {
   return (
     <section className="bg-black">
       <div className="container-fractal">
-        <div className="flex w-full flex-col items-center justify-center gap-10 pt-40">
+        <div
+          data-aos="fade-up"
+          className="flex w-full flex-col items-center justify-center gap-10 pt-40"
+        >
           <BodyText variant="title1" className="w-full">
             Overview
           </BodyText>

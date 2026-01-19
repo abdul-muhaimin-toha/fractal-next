@@ -15,7 +15,10 @@ function TheResultsSection() {
               surprised by the strength and consistency of the response.
             </BodyText>
             <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-24">
-              <div className="flex aspect-video h-auto w-full flex-col items-center justify-center gap-6 bg-[#74C2CA] text-center sm:aspect-square lg:col-span-7">
+              <div
+                data-aos="fade-right"
+                className="flex aspect-video h-auto w-full flex-col items-center justify-center gap-6 bg-[#74C2CA] text-center sm:aspect-square lg:col-span-7"
+              >
                 <BodyText variant="title4" className="text-black">
                   12.74%
                 </BodyText>
@@ -31,7 +34,10 @@ function TheResultsSection() {
                   Video Views
                 </BodyText>
               </div>
-              <div className="flex aspect-video h-auto w-full flex-col items-center justify-center gap-6 bg-[#A6C780] text-center sm:aspect-square lg:col-span-7">
+              <div
+                data-aos="fade-left"
+                className="flex aspect-video h-auto w-full flex-col items-center justify-center gap-6 bg-[#A6C780] text-center sm:aspect-square lg:col-span-7"
+              >
                 <BodyText variant="title4" className="text-black">
                   180,510
                 </BodyText>

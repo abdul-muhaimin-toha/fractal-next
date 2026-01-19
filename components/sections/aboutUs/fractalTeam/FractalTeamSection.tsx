@@ -15,7 +15,7 @@ function FractalTeamSection() {
       <div className="container-fractal">
         <div className="flex w-full flex-col gap-20 py-24 md:gap-25 md:py-40">
           {/* Heading */}
-          <div className="flex flex-col gap-5 md:gap-10">
+          <div data-aos="fade-up" className="flex flex-col gap-5 md:gap-10">
             <Heading variant="h1" className="text-white">
               The Fractal Team
             </Heading>
@@ -28,7 +28,10 @@ function FractalTeamSection() {
           </div>
 
           {/* Team Grid */}
-          <div className="grid w-full grid-cols-1 gap-x-5 gap-y-14 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-20 md:grid-cols-3 md:gap-y-24 lg:gap-x-5 xl:grid-cols-4 xl:gap-y-35">
+          <div
+            data-aos="fade-down"
+            className="grid w-full grid-cols-1 gap-x-5 gap-y-14 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-20 md:grid-cols-3 md:gap-y-24 lg:gap-x-5 xl:grid-cols-4 xl:gap-y-35"
+          >
             {teamMembers.map((member, index) => (
               <div key={index} className="flex w-full flex-col gap-5">
                 <div className="relative aspect-square w-full">

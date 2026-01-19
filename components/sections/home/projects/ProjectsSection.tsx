@@ -14,18 +14,20 @@ const PROJECTS = ["", "", "", "", ""];
 
 function ProjectSlide() {
   return (
-    <div className="flex aspect-322/310 w-full flex-col items-center justify-center">
-      <Image
-        src="/home/our-project/project-1.png"
-        alt="Our project"
-        width={322}
-        height={310}
-        className="absolute h-full w-full object-cover"
-      />
+    <div className="flex group overflow-hidden aspect-322/310 w-full flex-col items-center justify-center">
+      <div className="h-full w-full">
+        <Image
+          src="/home/our-project/project-1.png"
+          alt="Our project"
+          width={322}
+          height={310}
+          className="h-full w-full group-hover:scale-105 duration-300 object-cover"
+        />
+      </div>
       <div className="absolute inset-0 z-10 h-full w-full bg-linear-180 from-black/0 to-black/70" />
       <BodyText
         variant="title2"
-        className="absolute bottom-7.5 left-4.5 z-20 text-white"
+        className="absolute group-hover:underline bottom-7.5 left-4.5 z-20 text-white"
       >
         viaSport
         <br /> British Columbia
@@ -82,7 +84,9 @@ function ProjectsSection() {
             <ProjectsSlider />
             <ProjectsPagination />
           </div>
-          <Button variant="icon">See All Projects</Button>
+          <Button data-aos="fade-up" variant="icon">
+            See All Projects
+          </Button>
         </div>
       </div>
     </section>

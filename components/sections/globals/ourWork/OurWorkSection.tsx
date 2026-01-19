@@ -6,7 +6,10 @@ import Link from "next/link";
 
 function OurWorkContent() {
   return (
-    <div className="mb-9.5 flex flex-col gap-4 sm:max-w-2xl lg:mb-22.5 lg:max-w-3xl lg:gap-7.5 xl:max-w-232">
+    <div
+      data-aos="fade-down"
+      className="mb-9.5 flex flex-col gap-4 sm:max-w-2xl lg:mb-22.5 lg:max-w-3xl lg:gap-7.5 xl:max-w-232"
+    >
       <BodyText variant="title1">
         Human Intelligence for a Human Future
       </BodyText>
@@ -24,20 +27,24 @@ function OurWorkContent() {
   );
 }
 
-function OurWorkSection() {
+function OurWorkSection({ version = "v1" }) {
   return (
-    <section className="bg-black">
+    <section
+      className={`bg-black ${version == "v2" && "mt-20.5 lg:mt-33.5 xl:mt-43.75"}`}
+    >
       <div className="flex w-full flex-col">
         {/* Heading */}
-        <div className="container-fractal">
-          <div className="flex w-full flex-col items-start justify-start py-14 xl:py-15">
-            <Heading className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent">
-              Our Work
-            </Heading>
+        {version === "v1" && (
+          <div data-aos="fade-up" className="container-fractal">
+            <div className="flex w-full flex-col items-start justify-start py-14 xl:py-15">
+              <Heading className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent">
+                Our Work
+              </Heading>
+            </div>
           </div>
-        </div>
+        )}
 
-        <div className="relative aspect-360/440 w-full sm:aspect-1920/882">
+        <div className="relative overflow-hidden aspect-360/440 w-full sm:aspect-1920/882">
           <Image
             src="/home/our-work/our-work-bg.png"
             alt="Our work"

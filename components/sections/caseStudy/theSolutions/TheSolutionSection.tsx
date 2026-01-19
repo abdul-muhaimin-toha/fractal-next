@@ -6,9 +6,12 @@ function TheSolutionSection() {
     <section className="bg-white">
       <div className="container-fractal">
         <div className="flex w-full flex-col items-center justify-center py-25">
-          <div className="flex w-full flex-col items-center justify-center gap-10">
+          <div
+            data-aos="fade-down"
+            className="flex w-full flex-col items-center justify-center gap-10"
+          >
             <BodyText variant="title1" className="w-full text-black">
-              やめてください
+              The Solution
             </BodyText>
             <div className="grid w-full grid-cols-1 gap-20 xl:grid-cols-[1fr_562px]">
               <div className="flex h-full w-full flex-col justify-between gap-10">

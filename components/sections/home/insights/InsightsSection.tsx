@@ -60,7 +60,7 @@ function InsightsList() {
 
 function InsightsSection() {
   return (
-    <section className="bg-dark relative">
+    <section className="bg-dark relative overflow-hidden">
       <div className="container-fractal">
         <div className="z-10 flex w-full max-w-251.5 flex-col items-center justify-center gap-12.5 py-15 lg:py-30">
           {/* Heading */}
@@ -83,6 +83,7 @@ function InsightsSection() {
           </Button>
         </div>
         <Image
+          data-aos="fade-left"
           src="/home/our-insights/bg-mobile.svg"
           alt="Hero tree"
           width={360}
@@ -90,6 +91,7 @@ function InsightsSection() {
           className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:hidden"
         />
         <Image
+          data-aos="fade-left"
           src="/home/our-insights/bg-desktop.svg"
           alt="Hero tree"
           width={360}

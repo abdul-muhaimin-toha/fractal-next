@@ -5,7 +5,10 @@ import Image from "next/image";
 
 function HeroContent() {
   return (
-    <div className="z-10 my-30.5 flex flex-col items-start justify-center gap-7.5 sm:max-w-2xl md:gap-10 lg:max-w-3xl xl:max-w-223 2xl:mt-85 2xl:mb-50">
+    <div
+      data-aos="fade-up"
+      className="z-10 my-30.5 flex flex-col items-start justify-center gap-7.5 sm:max-w-2xl md:gap-10 lg:max-w-3xl xl:max-w-223 2xl:mt-85 2xl:mb-50"
+    >
       <Heading variant="h2" className="w-full text-white">
         Embracing the real to create change.
       </Heading>
@@ -23,7 +26,7 @@ function HeroContent() {
 
 function HeroSection() {
   return (
-    <section className="bg-dark relative mt-20 2xl:mt-45">
+    <section className="bg-dark relative mt-20.5 lg:mt-33.5 xl:mt-43.75">
       <div className="container-fractal">
         {/* Hero Content */}
         <div className="flex w-full flex-col items-start justify-center">

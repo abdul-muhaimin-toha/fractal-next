@@ -4,7 +4,10 @@ import Image from "next/image";
 
 function HeroContent() {
   return (
-    <div className="z-10 flex flex-col items-start justify-center gap-7.5 py-30 md:max-w-3xl md:gap-10 lg:max-w-4xl lg:gap-15 xl:max-w-268">
+    <div
+      data-aos="fade-up"
+      className="z-10 flex flex-col items-start justify-center gap-7.5 py-30 md:max-w-3xl md:gap-10 lg:max-w-4xl lg:gap-15 xl:max-w-268"
+    >
       <Heading
         variant="h1"
         className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
@@ -20,7 +23,7 @@ function HeroContent() {
 
 function HeroSection() {
   return (
-    <section className="bg-dark relative mt-20 2xl:mt-45">
+    <section className="bg-dark overflow-hidden relative mt-20.5 lg:mt-33.5 xl:mt-43.75">
       <div className="container-fractal">
         {/* Hero Content */}
         <div className="flex w-full flex-col items-start justify-center">
@@ -29,6 +32,7 @@ function HeroSection() {
 
         {/* Hero Images */}
         <Image
+          data-aos="fade-left"
           src="/about-us/hero/hero-mobile.svg"
           alt="Hero tree"
           width={360}
@@ -36,6 +40,7 @@ function HeroSection() {
           className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:hidden"
         />
         <Image
+          data-aos="fade-left"
           src="/insights/hero/bg-desktop.svg"
           alt="Hero tree"
           width={360}

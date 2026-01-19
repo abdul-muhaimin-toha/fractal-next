@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Image from "next/image";
+import Link from "next/link";
 
 type FormValues = {
   name: string;
@@ -40,11 +41,14 @@ function GetInTouch() {
   };
 
   return (
-    <section className="bg-dark relative pt-20 2xl:pt-45">
+    <section className="bg-dark relative mt-20.5 overflow-hidden lg:mt-33.5 xl:mt-43.75">
       <div className="container-fractal">
         <div className="z-10 flex w-full flex-col gap-20 py-30 sm:max-w-lg sm:gap-24 md:max-w-xl lg:max-w-194.5 lg:gap-30 lg:pb-75">
           {/* Heading */}
-          <div className="z-10 flex w-full flex-col gap-6 2xl:gap-15">
+          <div
+            data-aos="fade-down"
+            className="z-10 flex w-full flex-col gap-6 2xl:gap-15"
+          >
             <Heading
               className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
               variant="h1"
@@ -58,6 +62,7 @@ function GetInTouch() {
           </div>
           {/* Form Fields */}
           <form
+            data-aos="fade-up"
             onSubmit={handleSubmit(onSubmit)}
             className="z-10 flex w-full flex-col gap-7.5"
           >
@@ -102,29 +107,37 @@ function GetInTouch() {
               Submit
             </Button>
           </form>
-          <div className="z-10 flex w-full flex-col gap-6 md:gap-10">
+          <div
+            data-aos="fade-up"
+            className="z-10 flex w-full flex-col gap-6 md:gap-10"
+          >
             <BodyText variant="title1">Contact Details</BodyText>
             <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-2.5 lg:gap-10">
               <div className="flex w-full flex-col gap-2.5">
                 <BodyText variant="title2" className="text-ocean-green">
                   Call Us
                 </BodyText>
-                <BodyText variant="body1" className="text-white opacity-60">
-                  (416) 857-1229
-                </BodyText>
+                <Link href="/" className="hover:underline duration-300">
+                  <BodyText variant="body1" className="text-white opacity-60">
+                    (416) 857-1229
+                  </BodyText>
+                </Link>
               </div>
               <div className="flex w-full flex-col gap-2.5">
-                <BodyText variant="title1" className="text-ocean-green">
+                <BodyText variant="title2" className="text-ocean-green">
                   Email Us
                 </BodyText>
-                <BodyText variant="body1" className="text-white opacity-60">
-                  ali@fractaldigital.ca
-                </BodyText>
+                <Link href="/" className="hover:underline duration-300">
+                  <BodyText variant="body1" className="text-white opacity-60">
+                    ali@fractaldigital.ca
+                  </BodyText>
+                </Link>
               </div>
             </div>
           </div>
         </div>
         <Image
+          data-aos="fade-left"
           src="/contact-us/bg.svg"
           alt="Hero tree"
           width={360}

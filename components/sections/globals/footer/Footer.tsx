@@ -5,34 +5,36 @@ import Link from "next/link";
 
 function FooterLogo() {
   return (
-    <Image
-      className="aspect-112/56 shrink-0 object-contain md:w-35 lg:w-49"
-      src="/fractal-logo.svg"
-      alt="Fractal Logo"
-      width={112}
-      height={56}
-    />
+    <Link href="/">
+      <Image
+        className="aspect-112/56 shrink-0 object-contain md:w-35 lg:w-49"
+        src="/fractal-logo.svg"
+        alt="Fractal Logo"
+        width={112}
+        height={56}
+      />
+    </Link>
   );
 }
 
 /* ----------------------------- Footer Links ----------------------------- */
 
 const footerLinks = [
-  "About Us",
-  "Our Work",
-  "Insights",
-  "Terms of service",
-  "Privacy policy",
+  { label: "About Us", href: "/about-us" },
+  { label: "Our Work", href: "/our-work" },
+  { label: "Insights", href: "/insights" },
+  { label: "Terms of service", href: "/terms-of-service" },
+  { label: "Privacy policy", href: "/privacy-policy" },
 ];
 
 function FooterLinks() {
   return (
     <div className="grid w-full grid-cols-2 gap-x-7.5 gap-y-4 md:max-w-67.5 md:gap-x-4 lg:max-w-max lg:gap-x-20 xl:gap-x-12.5 2xl:gap-x-12.5">
-      {footerLinks.map((label) => (
+      {footerLinks.map(({ label, href }) => (
         <Link
           key={label}
-          href="/"
-          className="font-sans text-[18px] font-normal tracking-[-0.18px] 2xl:text-2xl 2xl:leading-tight 2xl:font-medium"
+          href={href}
+          className="font-sans hover:underline duration-300 hover:text-ocean-orange text-[18px] font-normal tracking-[-0.18px] 2xl:text-2xl 2xl:leading-tight 2xl:font-medium"
         >
           {label}
         </Link>
@@ -46,9 +48,12 @@ function FooterLinks() {
 function FooterContact() {
   return (
     <div className="flex flex-col gap-4 md:max-w-63">
-      <p className="font-sans text-base leading-tight font-medium 2xl:text-2xl">
+      <Link
+        href="/"
+        className="font-sans hover:text-ocean-orange duration-300 hover:underline text-base leading-tight font-medium 2xl:text-2xl"
+      >
         ali@fractaldigital.ca
-      </p>
+      </Link>
       <p className="font-sans text-base leading-tight font-medium 2xl:text-2xl">
         Fractal Communications 43 Fairmont Avenue Ottawa, ON K1Y 1X4
       </p>
