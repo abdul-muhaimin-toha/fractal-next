@@ -17,7 +17,7 @@ function HeroContent() {
         contradictions, turning insight into practical strategy and storytelling
         that move people to act.
       </BodyText>
-      <Button variant="icon" className="md:mt-2.5">
+      <Button href="/about-us" variant="icon" className="md:mt-2.5">
         More about us
       </Button>
     </div>

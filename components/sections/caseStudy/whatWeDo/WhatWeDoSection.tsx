@@ -57,7 +57,7 @@ function WhatWeDoSection() {
                 </div>
                 <div className="flex h-full w-full flex-col items-center justify-center">
                   <Image
-                    src="/our-work/ads/ad.png"
+                    src="/our-work/ads/ad-1.png"
                     alt="Challenges"
                     className="aspect-562/454 h-auto w-full object-cover"
                     width={562}
@@ -77,21 +77,21 @@ function WhatWeDoSection() {
                   height={310}
                 />
                 <Image
-                  src="/our-work/grid-cards/item-1.png"
+                  src="/our-work/grid-cards/item-2.png"
                   alt="Card"
                   className="aspect-322/310 h-auto w-full object-cover"
                   width={322}
                   height={310}
                 />
                 <Image
-                  src="/our-work/grid-cards/item-1.png"
+                  src="/our-work/grid-cards/item-3.png"
                   alt="Card"
                   className="aspect-322/310 h-auto w-full object-cover"
                   width={322}
                   height={310}
                 />
                 <Image
-                  src="/our-work/grid-cards/item-1.png"
+                  src="/our-work/grid-cards/item-4.png"
                   alt="Card"
                   className="aspect-322/310 h-auto w-full object-cover"
                   width={322}
@@ -118,7 +118,7 @@ function WhatWeDoSection() {
                 </div>
                 <div className="flex h-full w-full flex-col items-center justify-center">
                   <Image
-                    src="/our-work/ads/ad.png"
+                    src="/our-work/ads/ad-2.png"
                     alt="Challenges"
                     className="aspect-562/454 h-auto w-full object-cover"
                     width={562}

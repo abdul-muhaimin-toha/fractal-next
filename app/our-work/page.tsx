@@ -5,7 +5,10 @@ import OurWorkSection from "@/components/sections/ourWork/ourWorkSection/OurWork
 export default function OurWorkPage() {
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        title="Our Work"
+        description="The latest on what's shaping change in a mission-driven world."
+      />
       <OurWorkSection />
       <GetInTouch />
     </>

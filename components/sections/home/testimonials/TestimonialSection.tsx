@@ -3,6 +3,25 @@
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Image from "next/image";
 
+// Data extracted from the screenshot
+const TESTIMONIALS = [
+  {
+    id: 1,
+    imageSrc: "/home/testimonials/client-1.png", // Update filename for Andrea if needed
+    title: "They effortlessly turn complexity into clarity.",
+    subtitle: "And they’re the easiest and kindest people to work with.",
+    author: "Andrea Wooles - Manager, Safe Sport, viasport BC",
+  },
+  {
+    id: 2,
+    imageSrc: "/home/testimonials/client-2.png", // Update filename for Kevin if needed
+    title:
+      "Fractal is my go-to-fixer; for marketing problems, research gaps, and strategic brainstorming.",
+    subtitle: "They never let me down.",
+    author: "Kevin Kee - Dean, University of Ottawa, Faculty of Arts",
+  },
+];
+
 // Single testimonial item
 function TestimonialItem({
   imageSrc,
@@ -10,6 +29,12 @@ function TestimonialItem({
   subtitle,
   author,
   reverse = false,
+}: {
+  imageSrc: string;
+  title: string;
+  subtitle: string;
+  author: string;
+  reverse?: boolean;
 }) {
   return (
     <div
@@ -47,16 +72,19 @@ function TestimonialItem({
 }
 
 function TestimonialSection() {
+  // Destructure for cleaner usage in the return
+  const [firstTestimonial, secondTestimonial] = TESTIMONIALS;
+
   return (
     <section className="bg-black">
       <div className="container-fractal">
         <div className="flex w-full flex-col items-center justify-center gap-15 py-15 md:gap-30 lg:py-47.5">
-          {/* First testimonial */}
+          {/* First testimonial (Andrea) */}
           <TestimonialItem
-            imageSrc="/home/testimonials/client-1.png"
-            title="They effortlessly turn complexity into clarity."
-            subtitle="And they’re the easiest and kindest people to work with."
-            author="Andrea Wooles - Manager, Safe Sport, viasport BC"
+            imageSrc={firstTestimonial.imageSrc}
+            title={firstTestimonial.title}
+            subtitle={firstTestimonial.subtitle}
+            author={firstTestimonial.author}
           />
 
           {/* SVG separator */}
@@ -137,12 +165,12 @@ function TestimonialSection() {
             </defs>
           </svg>
 
-          {/* Second testimonial */}
+          {/* Second testimonial (Kevin) - Note the 'reverse' prop */}
           <TestimonialItem
-            imageSrc="/home/testimonials/client-1.png"
-            title="They effortlessly turn complexity into clarity."
-            subtitle="And they’re the easiest and kindest people to work with."
-            author="Andrea Wooles - Manager, Safe Sport, viasport BC"
+            imageSrc={secondTestimonial.imageSrc}
+            title={secondTestimonial.title}
+            subtitle={secondTestimonial.subtitle}
+            author={secondTestimonial.author}
             reverse
           />
         </div>

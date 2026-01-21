@@ -4,37 +4,88 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import { Button } from "@/components/globals/buttons/Button";
 import Image from "next/image";
 import { BodyText } from "@/components/globals/typography/BodyText";
+import Link from "next/link";
 
-const PROJECTS = ["", "", "", "", ""];
+/* -------------------------------------------------------------------------- */
+/*                               PROJECT DATA                                 */
+/* -------------------------------------------------------------------------- */
 
-function ProjectSlide() {
+const PROJECTS = [
+  {
+    title: "viaSport",
+    subtitle: "British Columbia",
+    image: "/home/our-project/project-1.png",
+    href: "/our-work/details",
+  },
+  {
+    title: "March of Dimes",
+    subtitle: "Canada",
+    image: "/home/our-project/project-2.png",
+    href: "/our-work/details",
+  },
+  {
+    title: "Queen’s",
+    subtitle: "University",
+    image: "/home/our-project/project-3.png",
+    href: "/our-work/details",
+  },
+  {
+    title: "Verve",
+    subtitle: "Senior Living",
+    image: "/home/our-project/project-4.png",
+    href: "/our-work/details",
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*                               SLIDE CARD                                   */
+/* -------------------------------------------------------------------------- */
+
+interface ProjectSlideProps {
+  title: string;
+  subtitle: string;
+  image: string;
+  href: string;
+}
+
+function ProjectSlide({ title, subtitle, image, href }: ProjectSlideProps) {
   return (
-    <div className="flex group overflow-hidden aspect-322/310 w-full flex-col items-center justify-center">
-      <div className="h-full w-full">
-        <Image
-          src="/home/our-project/project-1.png"
-          alt="Our project"
-          width={322}
-          height={310}
-          className="h-full w-full group-hover:scale-105 duration-300 object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 z-10 h-full w-full bg-linear-180 from-black/0 to-black/70" />
+    <Link
+      href={href}
+      className="group relative flex aspect-322/310 w-full overflow-hidden"
+    >
+      {/* Image */}
+      <Image
+        src={image}
+        alt={`${title} ${subtitle}`}
+        width={322}
+        height={310}
+        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 z-10 bg-linear-180 from-black/0 to-black/70" />
+
+      {/* Text */}
       <BodyText
         variant="title2"
-        className="absolute group-hover:underline bottom-7.5 left-4.5 z-20 text-white"
+        className="absolute bottom-7.5 left-4.5 z-20 text-white group-hover:underline"
       >
-        viaSport
-        <br /> British Columbia
+        {title}
+        <br />
+        {subtitle}
       </BodyText>
-    </div>
+    </Link>
   );
 }
+
+/* -------------------------------------------------------------------------- */
+/*                               SLIDER                                       */
+/* -------------------------------------------------------------------------- */
 
 function ProjectsSlider() {
   return (
@@ -48,7 +99,10 @@ function ProjectsSlider() {
         el: ".custom-pagination-projects",
         clickable: true,
       }}
-      autoplay={{ delay: 3000, pauseOnMouseEnter: true }}
+      autoplay={{
+        delay: 3000,
+        pauseOnMouseEnter: true,
+      }}
       breakpoints={{
         360: { slidesPerView: 1 },
         640: { slidesPerView: 1 },
@@ -57,17 +111,21 @@ function ProjectsSlider() {
         1280: { slidesPerView: 4 },
       }}
     >
-      {PROJECTS.map((_, idx) => (
+      {PROJECTS.map((project, idx) => (
         <SwiperSlide
           key={idx}
           className="flex! h-auto! cursor-grab active:cursor-grabbing"
         >
-          <ProjectSlide />
+          <ProjectSlide {...project} />
         </SwiperSlide>
       ))}
     </Swiper>
   );
 }
+
+/* -------------------------------------------------------------------------- */
+/*                              PAGINATION                                    */
+/* -------------------------------------------------------------------------- */
 
 function ProjectsPagination() {
   return (
@@ -75,7 +133,11 @@ function ProjectsPagination() {
   );
 }
 
-function ProjectsSection() {
+/* -------------------------------------------------------------------------- */
+/*                              SECTION                                       */
+/* -------------------------------------------------------------------------- */
+
+export default function ProjectsSection() {
   return (
     <section className="bg-black">
       <div className="container-fractal">
@@ -84,7 +146,8 @@ function ProjectsSection() {
             <ProjectsSlider />
             <ProjectsPagination />
           </div>
-          <Button data-aos="fade-up" variant="icon">
+
+          <Button href="/our-work" data-aos="fade-up" variant="icon">
             See All Projects
           </Button>
         </div>
@@ -92,5 +155,3 @@ function ProjectsSection() {
     </section>
   );
 }
-
-export default ProjectsSection;

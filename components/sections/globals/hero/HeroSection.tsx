@@ -2,7 +2,12 @@ import { BodyText } from "@/components/globals/typography/BodyText";
 import Heading from "@/components/globals/typography/Heading";
 import Image from "next/image";
 
-function HeroContent() {
+interface HeroSectionProps {
+  title: string;
+  description: string;
+}
+
+function HeroContent({ title, description }: HeroSectionProps) {
   return (
     <div
       data-aos="fade-up"
@@ -12,22 +17,22 @@ function HeroContent() {
         variant="h1"
         className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
       >
-        Insights
+        {title}
       </Heading>
       <BodyText variant="body1" className="w-full text-white">
-        The latest on what&apos;s shaping change in a mission-driven world.
+        {description}
       </BodyText>
     </div>
   );
 }
 
-function HeroSection() {
+function HeroSection({ title, description }: HeroSectionProps) {
   return (
-    <section className="bg-dark overflow-hidden relative mt-20.5 lg:mt-33.5 xl:mt-43.75">
+    <section className="bg-dark relative mt-20.5 overflow-hidden lg:mt-33.5 xl:mt-43.75">
       <div className="container-fractal">
         {/* Hero Content */}
         <div className="flex w-full flex-col items-start justify-center">
-          <HeroContent />
+          <HeroContent title={title} description={description} />
         </div>
 
         {/* Hero Images */}

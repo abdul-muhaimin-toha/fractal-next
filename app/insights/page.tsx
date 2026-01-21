@@ -5,7 +5,10 @@ import HeroSection from "@/components/sections/globals/hero/HeroSection";
 export default function InsightsPage() {
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        title="Insights"
+        description="The latest on what's shaping change in a mission-driven world."
+      />
       <ArticlesSection />
       <GetInTouch />
     </>

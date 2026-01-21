@@ -28,7 +28,7 @@ function BeyondTheMatrixSection() {
               <Image
                 className="aspect-square w-full shrink-0 object-cover sm:w-60 xl:w-77.5"
                 alt="Avatar"
-                src="/our-work/beyond-matrix/client-1.png"
+                src="/our-work/beyond-matrix/client.png"
                 width={310}
                 height={310}
               />

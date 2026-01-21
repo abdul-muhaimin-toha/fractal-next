@@ -7,13 +7,13 @@ import Link from "next/link";
 // Desktop navigation
 function DesktopNav() {
   return (
-    <div className="hidden lg:flex flex-col items-end gap-5">
+    <div className="hidden flex-col items-end gap-5 lg:flex">
       <div className="flex flex-row items-center gap-2.5">
-        <button className="text-[18px] hover:underline hover:text-gradient-orange duration-300 font-normal leading-none text-white cursor-pointer">
+        <button className="hover:text-gradient-orange cursor-pointer text-[18px] leading-none font-normal text-white duration-300 hover:underline">
           English
         </button>
         <span className="h-4 w-px bg-white" />
-        <button className="text-[18px] hover:underline hover:text-gradient-orange duration-300 font-normal leading-none text-white cursor-pointer">
+        <button className="hover:text-gradient-orange cursor-pointer text-[18px] leading-none font-normal text-white duration-300 hover:underline">
           François
         </button>
       </div>
@@ -21,25 +21,26 @@ function DesktopNav() {
       <div className="flex flex-row items-center gap-10 xl:gap-12.5">
         <Link
           href="/about-us"
-          className="text-xl hover:text-ocean-orange duration-300 xl:text-2xl font-medium leading-none"
+          className="hover:text-ocean-orange text-xl leading-none font-medium duration-300 xl:text-2xl"
         >
           About Us
         </Link>
         <Link
           href="/our-work"
-          className="text-xl xl:text-2xl hover:text-ocean-orange duration-300 font-medium leading-none"
+          className="hover:text-ocean-orange text-xl leading-none font-medium duration-300 xl:text-2xl"
         >
           Our Work
         </Link>
         <Link
           href="/insights"
-          className="text-xl xl:text-2xl hover:text-ocean-orange duration-300 font-medium leading-none"
+          className="hover:text-ocean-orange text-xl leading-none font-medium duration-300 xl:text-2xl"
         >
           Insights
         </Link>
-        <Link href="contact-us">
-          <Button variant="gradient">Get in touch</Button>
-        </Link>
+
+        <Button href="contact-us" variant="gradient">
+          Get in touch
+        </Button>
       </div>
     </div>
   );
@@ -55,15 +56,15 @@ const mobileNavLinks = [
 
 function MobileNav({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 flex lg:hidden justify-center items-center z-40 w-full bg-black">
+    <div className="fixed inset-0 z-40 flex w-full items-center justify-center bg-black lg:hidden">
       <div className="container-fractal">
-        <div className="flex relative flex-col items-center justify-center text-center w-full h-screen">
-          <div className="flex flex-col w-full gap-12 justify-center items-center">
+        <div className="relative flex h-screen w-full flex-col items-center justify-center text-center">
+          <div className="flex w-full flex-col items-center justify-center gap-12">
             {mobileNavLinks.map(({ label, href }) => (
               <Link
                 key={label}
                 href={href}
-                className="w-full text-xl font-medium leading-none duration-300 hover:text-ocean-orange xl:text-2xl"
+                className="hover:text-ocean-orange w-full text-xl leading-none font-medium duration-300 xl:text-2xl"
                 onClick={onClose}
               >
                 {label}
@@ -71,19 +72,19 @@ function MobileNav({ onClose }: { onClose: () => void }) {
             ))}
           </div>
 
-          <div className="absolute bottom-0 right-0 flex flex-col w-full gap-5 left-0 mb-5">
+          <div className="absolute right-0 bottom-0 left-0 mb-5 flex w-full flex-col gap-5">
             <Link href="/contact-us">
               <Button variant="gradient" className="w-full" onClick={onClose}>
                 Get in touch
               </Button>
             </Link>
 
-            <div className="flex w-full justify-center flex-row items-center gap-2.5">
-              <button className="hover:text-ocean-green hover:underline duration-300 text-base font-normal leading-none text-white">
+            <div className="flex w-full flex-row items-center justify-center gap-2.5">
+              <button className="hover:text-ocean-green text-base leading-none font-normal text-white duration-300 hover:underline">
                 English
               </button>
               <span className="h-4 w-px bg-white" />
-              <button className="hover:text-ocean-green hover:underline duration-300 text-base font-normal leading-none text-white">
+              <button className="hover:text-ocean-green text-base leading-none font-normal text-white duration-300 hover:underline">
                 François
               </button>
             </div>
@@ -109,18 +110,18 @@ function Header() {
   return (
     <>
       {/* HEADER */}
-      <div className="absolute top-0 right-0 left-0 z-50 flex w-full bg-black shadow-xs shadow-gray/20">
+      <div className="shadow-gray/20 absolute top-0 right-0 left-0 z-50 flex w-full bg-black shadow-xs">
         <div className="container-fractal">
-          <div className="w-full flex flex-row justify-between items-center gap-5 py-5 lg:py-6 xl:py-10">
+          <div className="flex w-full flex-row items-center justify-between gap-5 py-5 lg:py-6 xl:py-10">
             {/* LOGO */}
             <Link
               href="/"
-              className="cursor-pointer w-22 lg:w-36 xl:w-49 flex items-center justify-center"
+              className="flex w-22 cursor-pointer items-center justify-center lg:w-36 xl:w-49"
               onClick={() => setIsMenuOpen(false)}
             >
               {/* SVG Logo unchanged */}
               <svg
-                className="w-full h-auto shrink-0"
+                className="h-auto w-full shrink-0"
                 width={196}
                 height={95}
                 viewBox="0 0 196 95"
@@ -202,12 +203,12 @@ function Header() {
 
             {/* HAMBURGER */}
             <button
-              className="size-8.5 flex lg:hidden items-center justify-center"
+              className="flex size-8.5 items-center justify-center lg:hidden"
               onClick={() => setIsMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
             >
               <svg
-                className="w-full h-full shrink-0"
+                className="h-full w-full shrink-0"
                 width={34}
                 height={34}
                 viewBox="0 0 34 34"

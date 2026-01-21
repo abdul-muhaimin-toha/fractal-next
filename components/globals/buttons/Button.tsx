@@ -79,18 +79,17 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} passHref>
-        <p
-          className={clsx(
-            baseStyles,
-            sizes[variant],
-            variantClasses[variant],
-            className,
-          )}
-          style={borderButtonStyle}
-        >
-          {content}
-        </p>
+      <Link
+        href={href}
+        className={clsx(
+          baseStyles,
+          sizes[variant],
+          variantClasses[variant],
+          className,
+        )}
+        style={borderButtonStyle}
+      >
+        {content}
       </Link>
     );
   }

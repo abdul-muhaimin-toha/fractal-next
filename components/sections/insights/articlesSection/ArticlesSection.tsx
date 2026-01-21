@@ -7,6 +7,7 @@ import Image from "next/image";
 
 // ------------------- Types -------------------
 type Article = {
+  id: number;
   title: string;
   description: string;
   image: string;
@@ -19,6 +20,7 @@ type Category = {
 };
 
 // ------------------- Data -------------------
+// Preserving your categories structure
 const categories: Category[] = [
   { label: "All article", value: "all" },
   { label: "Category 1", value: "cat1" },
@@ -27,13 +29,33 @@ const categories: Category[] = [
   { label: "Category 4", value: "cat4" },
 ];
 
-const articles: Article[] = Array.from({ length: 3 }).map(() => ({
-  title: "Algorithmic Determinism",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  image: "/insights/articles/article-1.png",
-  category: "cat1",
-}));
+// Content extracted from the screenshot
+const ARTICLES: Article[] = [
+  {
+    id: 1,
+    title: "Algorithmic Determinism",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: "/insights/articles/article-1.png", // Update path as needed
+    category: "cat1",
+  },
+  {
+    id: 2,
+    title: "Reflections from the Black Box",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: "/insights/articles/article-2.png", // Update path as needed
+    category: "cat2",
+  },
+  {
+    id: 3,
+    title: "Open vs. Closed Marketing",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    image: "/insights/articles/article-3.png", // Update path as needed
+    category: "cat3",
+  },
+];
 
 // ------------------- Components -------------------
 function CategoryTabs({
@@ -82,7 +104,7 @@ function ArticleItem({ article }: { article: Article }) {
   return (
     <div
       data-aos="fade-up"
-      className="flex group w-full flex-col-reverse items-center gap-6 md:flex-row md:gap-4 lg:gap-14 xl:gap-45"
+      className="group flex w-full flex-col-reverse items-center gap-6 md:flex-row md:gap-4 lg:gap-14 xl:gap-45"
     >
       {/* Content */}
       <div className="flex w-full grow">
@@ -105,12 +127,12 @@ function ArticleItem({ article }: { article: Article }) {
       </div>
 
       {/* Image */}
-      <div className="relative overflow-hidden aspect-230/230 w-full shrink-0 md:w-57.5">
+      <div className="relative aspect-230/230 w-full shrink-0 overflow-hidden md:w-57.5">
         <Image
           src={article.image}
           alt={article.title}
           fill
-          className="object-cover group-hover:scale-105 duration-300"
+          className="object-cover duration-300 group-hover:scale-105"
         />
       </div>
     </div>
@@ -120,8 +142,8 @@ function ArticleItem({ article }: { article: Article }) {
 function ArticlesList({ articles }: { articles: Article[] }) {
   return (
     <div className="grid w-full grid-cols-1 gap-12.5">
-      {articles.map((article, index) => (
-        <ArticleItem key={index} article={article} />
+      {articles.map((article) => (
+        <ArticleItem key={article.id} article={article} />
       ))}
     </div>
   );
@@ -133,8 +155,8 @@ export default function ArticlesSection() {
 
   const filteredArticles =
     activeCategory === "all"
-      ? articles
-      : articles.filter((a) => a.category === activeCategory);
+      ? ARTICLES
+      : ARTICLES.filter((a) => a.category === activeCategory);
 
   return (
     <section className="bg-black">

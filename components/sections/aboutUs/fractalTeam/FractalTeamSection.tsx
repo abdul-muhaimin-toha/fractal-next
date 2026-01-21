@@ -2,12 +2,45 @@ import { BodyText } from "@/components/globals/typography/BodyText";
 import Heading from "@/components/globals/typography/Heading";
 import Image from "next/image";
 
-const teamMembers = Array.from({ length: 6 }).map(() => ({
-  name: "Ali Rahman",
-  role: "President, Strategic Lead",
-  bio: "I ensure alignment between positioning marketing assets audience expectations.",
-  image: "/about-us/team/member-1.png",
-}));
+// Dynamic content extracted from the screenshot
+const TEAM_MEMBERS = [
+  {
+    name: "Ali Rahman",
+    role: "President, Strategic Lead",
+    bio: "I ensure alignment between positioning marketing assets audience expectations.",
+    image: "/about-us/team/member-1.png", // Update path as needed
+  },
+  {
+    name: "Martin Horn",
+    role: "Media & Analytics Lead",
+    bio: "I design, execute and track campaigns, shape strategy and oversee media buys.",
+    image: "/about-us/team/member-2.png", // Update path as needed
+  },
+  {
+    name: "John Constantinides",
+    role: "Account Director",
+    bio: "I maintain consistency, transparency, and efficiency across project life cycles.",
+    image: "/about-us/team/member-3.png", // Update path as needed
+  },
+  {
+    name: "Melissa Taylor-Gates",
+    role: "Consultations Lead",
+    bio: "I foster inclusive collaboration and turn complex data into clear insights.",
+    image: "/about-us/team/member-4.png", // Update path as needed
+  },
+  {
+    name: "Nathaniel Bocabel",
+    role: "Digital Specialist",
+    bio: "I conduct research, digital strategies, and enhance campaign performance.",
+    image: "/about-us/team/member-5.png", // Update path as needed
+  },
+  {
+    name: "Kyle McKenna",
+    role: "Creative Director",
+    bio: "I turn strategies into creative solutions that engage audiences across media.",
+    image: "/about-us/team/member-6.png", // Update path as needed
+  },
+];
 
 function FractalTeamSection() {
   return (
@@ -32,12 +65,12 @@ function FractalTeamSection() {
             data-aos="fade-down"
             className="grid w-full grid-cols-1 gap-x-5 gap-y-14 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-20 md:grid-cols-3 md:gap-y-24 lg:gap-x-5 xl:grid-cols-4 xl:gap-y-35"
           >
-            {teamMembers.map((member, index) => (
+            {TEAM_MEMBERS.map((member, index) => (
               <div key={index} className="flex w-full flex-col gap-5">
                 <div className="relative aspect-square w-full">
                   <Image
                     className="h-full w-full"
-                    alt="Team member"
+                    alt={`${member.name} - ${member.role}`}
                     src={member.image}
                     fill
                   />

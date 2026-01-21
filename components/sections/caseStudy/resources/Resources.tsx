@@ -33,15 +33,14 @@ function Resources() {
                 className="max-w-full grow lg:max-w-94 xl:max-w-99"
                 variant="title4"
               >
-                Squeezed Resources
+                Uncertain Futures
               </BodyText>
               <BodyText
                 className="max-w-full grow opacity-80 lg:max-w-150 xl:max-w-200"
                 variant="body1"
               >
-                International student caps, tuition freezes, rising costs,
-                shrinking revenues. Universities are experiencing financial
-                precarity.
+                AI threatening jobs, political and economic uncertainty, trust
+                in higher education eroding (especially in arts)
               </BodyText>
             </div>
             <div
@@ -52,15 +51,14 @@ function Resources() {
                 className="max-w-full grow lg:max-w-94 xl:max-w-99"
                 variant="title4"
               >
-                Squeezed Resources
+                Saturated Lansdscape
               </BodyText>
               <BodyText
                 className="max-w-full grow opacity-80 lg:max-w-150 xl:max-w-200"
                 variant="body1"
               >
-                International student caps, tuition freezes, rising costs,
-                shrinking revenues. Universities are experiencing financial
-                precarity.
+                Increased competition among universities, focus on developing
+                career skills, prioritizing hard skills (STEM)
               </BodyText>
             </div>
           </div>

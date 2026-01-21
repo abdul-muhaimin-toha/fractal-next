@@ -18,7 +18,7 @@ function OurWorkContent() {
         their brand into a bold statement for the future of arts education.
       </BodyText>
       <Link
-        href="/"
+        href="/our-work"
         className="hover:text-ocean-orange mt-1 duration-300 lg:mt-0"
       >
         <ArrowRightIcon className="size-7.5 xl:size-10" />
@@ -44,7 +44,7 @@ function OurWorkSection({ version = "v1" }) {
           </div>
         )}
 
-        <div className="relative overflow-hidden aspect-360/440 w-full sm:aspect-1920/882">
+        <div className="relative aspect-360/440 w-full overflow-hidden sm:aspect-1920/882">
           <Image
             src="/home/our-work/our-work-bg.png"
             alt="Our work"
