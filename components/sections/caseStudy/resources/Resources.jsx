@@ -16,7 +16,6 @@ function Resources({ data }) {
               detail_entries.map((entry, idx) => (
                 <div
                   key={idx}
-                  data-aos="fade-up"
                   className="items-top flex w-full flex-col justify-between gap-10 lg:flex-row"
                 >
                   <BodyText

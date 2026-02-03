@@ -20,7 +20,7 @@ export default async function ProjectsSection({ data }) {
     projectIds.map(async (p) => {
       const id = p.id || p;
       return await getProjectById(id);
-    })
+    }),
   );
 
   const cleanProjects = fetchedProjects.filter(Boolean);
@@ -37,7 +37,6 @@ export default async function ProjectsSection({ data }) {
             <Button
               href={buttonHref}
               target={open_in_new_tab ? "_blank" : "_self"}
-              data-aos="fade-up"
               variant="icon"
             >
               {button_text}
@@ -48,4 +47,3 @@ export default async function ProjectsSection({ data }) {
     </section>
   );
 }
-

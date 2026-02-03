@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 import ArrowRightIcon from "@/components/globals/icons/ArrowRightIcon";
@@ -9,10 +9,7 @@ import { Button } from "@/components/globals/buttons/Button";
 
 function CategoryTabs({ categories, activeCategory, onChange }) {
   return (
-    <div
-      data-aos="fade-down"
-      className="flex w-full flex-row items-center justify-start gap-5 overflow-auto pb-3 lg:justify-center"
-    >
+    <div className="flex w-full flex-row items-center justify-start gap-5 overflow-auto pb-3 lg:justify-center">
       <button
         onClick={() => onChange("all")}
         className="group relative inline-flex h-13 cursor-pointer items-center justify-center gap-3 border px-6 py-3 font-semibold text-transparent duration-300 xl:h-13.5"
@@ -68,7 +65,6 @@ function ArticleItem({ article }) {
   return (
     <Link
       href={`/insights/${article.slug}`}
-      data-aos="fade-up"
       className="group flex w-full flex-col-reverse items-center gap-6 md:flex-row md:gap-4 lg:gap-14 xl:gap-45"
     >
       {/* Content */}

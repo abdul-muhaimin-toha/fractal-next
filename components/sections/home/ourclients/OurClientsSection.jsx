@@ -22,15 +22,12 @@ async function OurClientsSection({ data }) {
 
   const clients = await getAllClients();
 
-  
-
   return (
     <section className="bg-dark">
       <div className="container-fractal">
         <div className="flex w-full flex-col items-center justify-center gap-7.5 py-15 md:items-start md:gap-20 md:py-30">
           {section_title && (
             <Heading
-              data-aos="fade-down"
               className="from-gradient-green to-gradient-orange w-fit bg-linear-90 bg-clip-text text-transparent"
               variant="h1"
             >
@@ -39,20 +36,13 @@ async function OurClientsSection({ data }) {
           )}
 
           {clients.length > 0 && (
-            <div
-              data-aos="fade-up"
-              className="grid w-full grid-cols-2 gap-x-8.75 gap-y-2 sm:grid-cols-3 sm:gap-2.5 md:grid-cols-4 lg:grid-cols-6"
-            >
+            <div className="grid w-full grid-cols-2 gap-x-8.75 gap-y-2 sm:grid-cols-3 sm:gap-2.5 md:grid-cols-4 lg:grid-cols-6">
               {clients.map((client) => {
                 const logo = client?.featuredImage?.node?.sourceUrl;
                 if (!logo) return null;
-                
+
                 return (
-                  <ClientLogo 
-                    key={client.id} 
-                    src={logo} 
-                    alt={client.title} 
-                  />
+                  <ClientLogo key={client.id} src={logo} alt={client.title} />
                 );
               })}
             </div>

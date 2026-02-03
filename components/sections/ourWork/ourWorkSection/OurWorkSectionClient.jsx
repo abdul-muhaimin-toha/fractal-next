@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { BodyText } from "@/components/globals/typography/BodyText";
@@ -15,7 +15,6 @@ function ProjectCard({ project }) {
   return (
     <Link
       href={`/our-works/${slug}`}
-      data-aos="fade-up"
       className="group flex w-full flex-col gap-5"
     >
       <div className="relative aspect-664/500 w-full overflow-hidden">
@@ -34,7 +33,7 @@ function ProjectCard({ project }) {
           <BodyText variant="body4" className="text-ocean-green">
             {category}
           </BodyText>
-        ) }
+        )}
         <BodyText
           variant="title2"
           className="line-clamp-2 group-hover:underline"

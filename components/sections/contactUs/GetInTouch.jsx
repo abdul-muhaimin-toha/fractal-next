@@ -22,12 +22,8 @@ function GetInTouch({ data }) {
 
   if (!content) return null;
 
-  const {
-    section_title,
-    section_description,
-    phone_number,
-    email_address,
-  } = content;
+  const { section_title, section_description, phone_number, email_address } =
+    content;
 
   const {
     register,
@@ -48,7 +44,7 @@ function GetInTouch({ data }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       if (response.ok) {
@@ -68,10 +64,7 @@ function GetInTouch({ data }) {
       <div className="container-fractal">
         <div className="z-10 flex w-full flex-col gap-20 py-30 sm:max-w-lg sm:gap-24 md:max-w-xl lg:max-w-194.5 lg:gap-30 lg:pb-75">
           {/* Heading */}
-          <div
-            data-aos="fade-down"
-            className="z-10 flex w-full flex-col gap-6 2xl:gap-15"
-          >
+          <div className="z-10 flex w-full flex-col gap-6 2xl:gap-15">
             {section_title && (
               <Heading
                 className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
@@ -88,7 +81,6 @@ function GetInTouch({ data }) {
           </div>
           {/* Form Fields */}
           <form
-            data-aos="fade-up"
             onSubmit={handleSubmit(onSubmit)}
             className="z-10 flex w-full flex-col gap-7.5"
           >
@@ -138,10 +130,7 @@ function GetInTouch({ data }) {
               {isSubmitting ? "Sending" : "Submit"}
             </Button>
           </form>
-          <div
-            data-aos="fade-up"
-            className="z-10 flex w-full flex-col gap-6 md:gap-10"
-          >
+          <div className="z-10 flex w-full flex-col gap-6 md:gap-10">
             <BodyText variant="title1">Contact Details</BodyText>
             <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-2.5 lg:gap-10">
               {phone_number && (
@@ -151,7 +140,7 @@ function GetInTouch({ data }) {
                   </BodyText>
                   <Link
                     href={`tel:${phone_number}`}
-                    className="hover:underline duration-300 w-fit"
+                    className="w-fit duration-300 hover:underline"
                   >
                     <BodyText variant="body1" className="text-white opacity-60">
                       {phone_number}
@@ -166,7 +155,7 @@ function GetInTouch({ data }) {
                   </BodyText>
                   <Link
                     href={`mailto:${email_address}`}
-                    className="hover:underline duration-300 w-fit"
+                    className="w-fit duration-300 hover:underline"
                   >
                     <BodyText variant="body1" className="text-white opacity-60">
                       {email_address}
@@ -178,7 +167,6 @@ function GetInTouch({ data }) {
           </div>
         </div>
         <Image
-          data-aos="fade-left"
           src="/contact-us/bg.svg"
           alt="Hero tree"
           width={360}

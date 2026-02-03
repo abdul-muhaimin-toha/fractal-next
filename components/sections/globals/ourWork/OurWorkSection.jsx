@@ -12,10 +12,7 @@ function OurWorkContent({
   openInNewTab,
 }) {
   return (
-    <div
-      data-aos="fade-down"
-      className="mb-9.5 flex flex-col gap-4 sm:max-w-2xl lg:mb-22.5 lg:max-w-3xl lg:gap-7.5 xl:max-w-232"
-    >
+    <div className="mb-9.5 flex flex-col gap-4 sm:max-w-2xl lg:mb-22.5 lg:max-w-3xl lg:gap-7.5 xl:max-w-232">
       {bodyTitle && <BodyText variant="title1">{bodyTitle}</BodyText>}
       {bodyDescription && (
         <BodyText variant="body3">{bodyDescription}</BodyText>
@@ -60,7 +57,7 @@ export default async function OurWorkSection({ data }) {
       <div className="flex w-full flex-col">
         {/* Heading */}
         {style_version === "v1" && section_title && (
-          <div data-aos="fade-up" className="container-fractal">
+          <div className="container-fractal">
             <div className="flex w-full flex-col items-start justify-start py-14 xl:py-15">
               <Heading className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent">
                 {section_title}

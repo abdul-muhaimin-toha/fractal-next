@@ -42,7 +42,7 @@ function GetInTouch({ data }) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       if (response.ok) {
@@ -62,26 +62,23 @@ function GetInTouch({ data }) {
       <div className="container-fractal">
         <div className="z-10 flex w-full flex-col gap-7.5 py-15 sm:max-w-lg sm:gap-10 md:max-w-xl md:gap-14 md:py-33.75 lg:max-w-194.5 lg:gap-20">
           {/* Heading */}
-          <div data-aos="fade-up" className="z-10 flex w-full flex-col gap-6">
+          <div className="z-10 flex w-full flex-col gap-6">
             {title && (
               <Heading
                 className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
                 variant="h1"
-                
               >
                 {title}
               </Heading>
             )}
             {description && (
-              <BodyText
-                variant="body3"
-                className="max-w-md lg:max-w-125.75"
-              >{description}</BodyText>
+              <BodyText variant="body3" className="max-w-md lg:max-w-125.75">
+                {description}
+              </BodyText>
             )}
           </div>
           {/* Form Fields */}
           <form
-            data-aos="fade-up"
             onSubmit={handleSubmit(onSubmit)}
             className="z-10 flex w-full flex-col gap-7.5"
           >

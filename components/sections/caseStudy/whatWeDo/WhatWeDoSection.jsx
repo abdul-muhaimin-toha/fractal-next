@@ -25,7 +25,6 @@ function WhatWeDoSection({ data }) {
                     return (
                       <div
                         key={idx}
-                        data-aos="fade-up"
                         className="grid w-full grid-cols-2 gap-5 lg:grid-cols-4"
                       >
                         {item.grid_images &&
@@ -47,12 +46,14 @@ function WhatWeDoSection({ data }) {
                   return (
                     <div
                       key={idx}
-                      data-aos="fade-up"
                       className="grid w-full grid-cols-1 items-center justify-center gap-20 xl:grid-cols-[1fr_562px]"
                     >
                       <div className="flex h-full w-full flex-col justify-start gap-5">
                         {item.title && (
-                          <BodyText variant="title2" className="text-ocean-green">
+                          <BodyText
+                            variant="title2"
+                            className="text-ocean-green"
+                          >
                             {item.title}
                           </BodyText>
                         )}

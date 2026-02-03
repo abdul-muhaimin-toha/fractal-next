@@ -16,10 +16,9 @@ function InsightItem({ title, description, slug }) {
       <BodyText variant="title1">{title}</BodyText>
 
       <div className="flex w-full flex-col gap-5 sm:flex-row sm:items-end sm:gap-9.5">
-        <p 
-          className="text-gray grow text-sm sm:text-base xl:text-lg 2xl:text-xl line-clamp-2"
-          
-        >{description}</p>
+        <p className="text-gray line-clamp-2 grow text-sm sm:text-base xl:text-lg 2xl:text-xl">
+          {description}
+        </p>
 
         <ArrowRightIcon className="group-hover:text-ocean-orange size-7.5 duration-300 sm:size-8.5" />
       </div>
@@ -35,12 +34,12 @@ function InsightItem({ title, description, slug }) {
 
 export default async function InsightsSection({ data }) {
   const content = data?.data || {};
-  const { 
-    button_page, 
-    insights, 
-    open_in_new_tab, 
-    section_description, 
-    section_title, 
+  const {
+    button_page,
+    insights,
+    open_in_new_tab,
+    section_description,
+    section_title,
   } = content;
 
   let buttonHref = "/";
@@ -56,7 +55,7 @@ export default async function InsightsSection({ data }) {
     insightIds.map(async (i) => {
       const id = i.id || i;
       return await getInsightById(id);
-    })
+    }),
   );
 
   const cleanInsights = fetchedInsights.filter(Boolean);
@@ -110,7 +109,6 @@ export default async function InsightsSection({ data }) {
 
         {/* Background Images */}
         <Image
-          data-aos="fade-left"
           src="/home/our-insights/bg-mobile.svg"
           alt="Insights background"
           width={360}
@@ -119,7 +117,6 @@ export default async function InsightsSection({ data }) {
         />
 
         <Image
-          data-aos="fade-left"
           src="/home/our-insights/bg-desktop.svg"
           alt="Insights background"
           width={360}
@@ -130,6 +127,3 @@ export default async function InsightsSection({ data }) {
     </section>
   );
 }
-
-
-

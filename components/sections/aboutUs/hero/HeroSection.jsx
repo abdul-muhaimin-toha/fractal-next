@@ -9,8 +9,9 @@ function HeroContent({ title, description }) {
         <Heading
           variant="h1"
           className="from-gradient-green to-gradient-orange w-fit bg-linear-to-r bg-clip-text text-transparent"
-          
-        >{title}</Heading>
+        >
+          {title}
+        </Heading>
       )}
       {description && (
         <BodyText variant="body1" className="w-full text-white">
@@ -29,16 +30,12 @@ function HeroSection({ data }) {
     <section className="bg-dark relative z-10 mt-20.5 overflow-hidden lg:mt-33.5 xl:mt-43.75">
       <div className="container-fractal z-10">
         {/* Hero Content */}
-        <div
-          data-aos="fade-up"
-          className="z-30 flex w-full flex-col items-start justify-center"
-        >
+        <div className="z-30 flex w-full flex-col items-start justify-center">
           <HeroContent title={title} description={description} />
         </div>
       </div>
       {/* Hero Images */}
       <Image
-        data-aos="fade-left"
         src="/about-us/hero/hero-mobile.svg"
         alt="Hero tree"
         width={360}
@@ -46,7 +43,6 @@ function HeroSection({ data }) {
         className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom-right sm:hidden"
       />
       <Image
-        data-aos="fade-left"
         src="/about-us/hero/hero-desktop.svg"
         alt="Hero tree"
         width={360}

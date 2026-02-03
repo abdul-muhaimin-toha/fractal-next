@@ -18,18 +18,19 @@ function TheResultsSection({ data }) {
               </BodyText>
             )}
             {description && (
-              <BodyText variant="body1" className="w-full text-black opacity-80">
+              <BodyText
+                variant="body1"
+                className="w-full text-black opacity-80"
+              >
                 {description}
               </BodyText>
             )}
-            <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-24 overflow-hidden">
+            <div className="grid w-full grid-cols-1 gap-5 overflow-hidden sm:grid-cols-2 lg:grid-cols-24">
               {result_metrics_data &&
                 result_metrics_data.map((result, idx) => {
                   let colSpan = "lg:col-span-7";
                   let aos = "";
                   if (idx === 1) colSpan = "lg:col-span-10";
-                  if (idx === 0) aos = "fade-right";
-                  if (idx === result_metrics_data.length - 1) aos = "fade-left";
 
                   return (
                     <div
@@ -39,7 +40,13 @@ function TheResultsSection({ data }) {
                         idx === 1 ? "lg:aspect-auto" : ""
                       }`}
                       style={{
-                        backgroundColor: result.background_color || (idx === 0 ? "#74C2CA" : idx === 1 ? "#7EC4A7" : "#A6C780"),
+                        backgroundColor:
+                          result.background_color ||
+                          (idx === 0
+                            ? "#74C2CA"
+                            : idx === 1
+                              ? "#7EC4A7"
+                              : "#A6C780"),
                       }}
                     >
                       <BodyText variant="title4" className="text-black">

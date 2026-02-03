@@ -19,10 +19,7 @@ function BeyondTheMatrixSection({ data }) {
     <section className="bg-black">
       <div className="container-fractal">
         <div className="flex w-full flex-col items-center justify-center py-25">
-          <div
-            data-aos="fade-down"
-            className="flex w-full flex-col items-center justify-center gap-10"
-          >
+          <div className="flex w-full flex-col items-center justify-center gap-10">
             {section_title && (
               <BodyText variant="title1" className="w-full text-white">
                 {section_title}

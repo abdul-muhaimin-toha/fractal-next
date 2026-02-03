@@ -12,10 +12,7 @@ function HeroContent({
   open_in_new_tab,
 }) {
   return (
-    <div
-      data-aos="fade-up"
-      className="z-10 my-30.5 flex flex-col items-start justify-center gap-7.5 sm:max-w-2xl md:gap-10 lg:max-w-3xl xl:max-w-223 2xl:mt-85 2xl:mb-50"
-    >
+    <div className="z-10 my-30.5 flex flex-col items-start justify-center gap-7.5 sm:max-w-2xl md:gap-10 lg:max-w-3xl xl:max-w-223 2xl:my-50">
       {title && (
         <Heading variant="h2" className="w-full text-white">
           {title}
@@ -42,7 +39,8 @@ function HeroContent({
 
 export default async function HeroSection({ data }) {
   const content = data?.data || {};
-  const { title, description, button_text, button_page, open_in_new_tab } = content;
+  const { title, description, button_text, button_page, open_in_new_tab } =
+    content;
 
   let buttonHref = "/";
   if (Array.isArray(button_page) && button_page.length > 0) {
