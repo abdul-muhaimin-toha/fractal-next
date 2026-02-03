@@ -24,11 +24,11 @@ export function Button({
   const variantClasses = {
     icon: clsx(
       "text-ocean-green group-hover:text-ocean-blue",
-      "text-sm sm:text-base xl:text-xl xl:tracking-[2.4px]",
+      "text-[0.7rem] sm:text-[0.8rem] xl:text-[1rem] xl:tracking-[2.4px]",
       "leading-none font-bold tracking-[1.68px] uppercase",
     ),
     gradient: clsx(
-      "text-black z-10 text-xl xl:text-2xl",
+      "text-black z-10 text-[1rem] xl:text-[1.2rem]",
       "leading-none font-semibold",
     ),
     border: "text-transparent",
@@ -57,7 +57,7 @@ export function Button({
       {extraElements[variant]}
 
       {variant === "border" ? (
-        <span className="from-gradient-green to-gradient-orange relative z-10 bg-linear-to-r bg-clip-text text-xl leading-none font-semibold text-transparent xl:text-2xl">
+        <span className="from-gradient-green to-gradient-orange relative z-10 bg-linear-to-r bg-clip-text text-[1rem] leading-none font-semibold text-transparent xl:text-[1.2rem]">
           {children}
         </span>
       ) : (

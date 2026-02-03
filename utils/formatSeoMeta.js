@@ -1,8 +1,6 @@
-import { getSeoData } from "@/graphql/components/getSeoData";
 import { SEO_CONSTANTS } from "./constants";
 
-export const formatSeoMeta = async (slugOrData) => {
-  const data = typeof slugOrData === "string" ? (await getSeoData(slugOrData)) || {} : slugOrData || {};
+export const formatSeoMeta = async (data = {}) => {
 
   const { seo = {} } = data;
   const {

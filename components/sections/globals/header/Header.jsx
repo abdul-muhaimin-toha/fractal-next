@@ -10,11 +10,11 @@ function DesktopNav({ menuItems, themeOptions }) {
   return (
     <div className="hidden flex-col items-end gap-5 lg:flex">
       <div className="flex flex-row items-center gap-2.5">
-        <button className="hover:text-gradient-orange cursor-pointer text-[18px] leading-none font-normal text-white duration-300 hover:underline">
+        <button className="hover:text-gradient-orange cursor-pointer text-[14.4px] leading-none font-normal text-white duration-300 hover:underline">
           English
         </button>
         <span className="h-4 w-px bg-white" />
-        <button className="hover:text-gradient-orange cursor-pointer text-[18px] leading-none font-normal text-white duration-300 hover:underline">
+        <button className="hover:text-gradient-orange cursor-pointer text-[14.4px] leading-none font-normal text-white duration-300 hover:underline">
           François
         </button>
       </div>
@@ -24,7 +24,7 @@ function DesktopNav({ menuItems, themeOptions }) {
           <Link
             key={item.id}
             href={item.uri}
-            className="hover:text-ocean-orange text-xl leading-none font-medium duration-300 xl:text-2xl"
+            className="hover:text-ocean-orange text-base leading-none font-medium duration-300 xl:text-[1.2rem]"
           >
             {item.label}
           </Link>
@@ -55,7 +55,7 @@ function MobileNav({ onClose, menuItems, themeOptions }) {
               <Link
                 key={item.id}
                 href={item.uri}
-                className="hover:text-ocean-orange w-full text-xl leading-none font-medium duration-300 xl:text-2xl"
+                className="hover:text-ocean-orange w-full text-base leading-none font-medium duration-300 xl:text-[1.2rem]"
                 onClick={onClose}
               >
                 {item.label}
@@ -73,11 +73,11 @@ function MobileNav({ onClose, menuItems, themeOptions }) {
             )}
 
             <div className="flex w-full flex-row items-center justify-center gap-2.5">
-              <button className="hover:text-ocean-green text-base leading-none font-normal text-white duration-300 hover:underline">
+              <button className="hover:text-ocean-green text-[0.8rem] leading-none font-normal text-white duration-300 hover:underline">
                 English
               </button>
               <span className="h-4 w-px bg-white" />
-              <button className="hover:text-ocean-green text-base leading-none font-normal text-white duration-300 hover:underline">
+              <button className="hover:text-ocean-green text-[0.8rem] leading-none font-normal text-white duration-300 hover:underline">
                 François
               </button>
             </div>

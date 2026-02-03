@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 const commonClasses = "font-sans text-current";
 
 const headingVariants = {
-  h1: "text-[3rem] sm:text-[3.15rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem] 2xl:text-[7.5rem] leading-[1.2] tracking-normal font-light",
-  h2: "text-[2.25rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[4rem] xl:text-[5rem] 2xl:text-[6.375rem] leading-[1.12] 2xl:leading-[0.99] tracking-normal font-medium",
+  h1: "text-[2.4rem] sm:text-[2.52rem] md:text-[3.2rem] lg:text-[4rem] xl:text-[4.8rem] 2xl:text-[6rem] leading-[1.2] tracking-normal font-light",
+  h2: "text-[1.8rem] sm:text-[2rem] md:text-[2.4rem] lg:text-[3.2rem] xl:text-[4rem] 2xl:text-[5.1rem] leading-[1.12] 2xl:leading-[0.99] tracking-normal font-medium",
 };
 
 export default function Heading({

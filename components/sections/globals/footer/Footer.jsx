@@ -27,7 +27,7 @@ function FooterLinks({ menuItems }) {
         <Link
           key={id}
           href={uri}
-          className="font-sans hover:underline duration-300 hover:text-ocean-orange text-[18px] font-normal tracking-[-0.18px] 2xl:text-2xl 2xl:leading-tight 2xl:font-medium"
+          className="font-sans hover:underline duration-300 hover:text-ocean-orange text-[14.4px] font-normal tracking-[-0.18px] 2xl:text-[1.2rem] 2xl:leading-tight 2xl:font-medium"
         >
           {label}
         </Link>
@@ -44,13 +44,13 @@ function FooterContact({ themeOptions }) {
       {themeOptions?.email && (
         <Link
           href={`mailto:${themeOptions.email}`}
-          className="font-sans hover:text-ocean-orange duration-300 hover:underline text-base leading-tight font-medium 2xl:text-2xl"
+          className="font-sans hover:text-ocean-orange duration-300 hover:underline text-[0.8rem] leading-tight font-medium 2xl:text-[1.2rem]"
         >
           {themeOptions.email}
         </Link>
       )}
       {themeOptions?.address && (
-        <p className="font-sans text-base leading-tight font-medium 2xl:text-2xl whitespace-pre-wrap">
+        <p className="font-sans text-[0.8rem] leading-tight font-medium 2xl:text-[1.2rem] whitespace-pre-wrap">
           {themeOptions.address}
         </p>
       )}

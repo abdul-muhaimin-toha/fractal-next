@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 // unless they are standard JS.
 // Also, we want to fetch the redirects effectively.
 
-export async function middleware(request) {
+export async function proxy(request) {
   const { pathname } = request.nextUrl;
 
   // Avoid running on static files and api routes
