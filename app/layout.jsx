@@ -4,8 +4,8 @@ import Footer from "@/components/sections/globals/footer/Footer";
 import Header from "@/components/sections/globals/header/Header";
 import ReactLenis from "lenis/react";
 import AOSWrapper from "@/utils/aos-wrapper";
-import Head from "next/head";
 import { Toaster } from "@/components/ui/sonner";
+import { getLayoutData } from "@/graphql/components/getLayoutData";
 
 const kohoSans = KoHo({
   variable: "--font-koho-sans",
@@ -13,24 +13,36 @@ const kohoSans = KoHo({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-export const metadata = {
-  title: "Fractal - Embracing the real to create change",
-  description:
-    "Fractal help organizations find strength in their complexity and contradictions, turning insight into practical strategy and storytelling that move people to act.",
-};
+export async function generateMetadata() {
+  const layoutData = await getLayoutData();
+  const { themeOptions } = layoutData || {};
+
+  return {
+    title: themeOptions?.siteTitle,
+    description: themeOptions?.siteDescription,
+    icons: {
+      icon: themeOptions?.websiteFavicon,
+    },
+  };
+}
 
 export default async function RootLayout({ children }) {
+  const layoutData = await getLayoutData();
+  const { themeOptions, headerMenu, footerMenu } = layoutData || {};
+
+  const { preconnectUrl } = themeOptions || {};
+
   return (
     <html lang="en">
-      <Head>
-        <link rel="preconnect" href="https://dashboard.sentrysecuritybd.com" />
-      </Head>
+      <head>
+        {preconnectUrl && <link rel="preconnect" href={preconnectUrl} />}
+      </head>
       <ReactLenis root>
         <body className={`${kohoSans.variable} antialiased`}>
           <AOSWrapper>
-            <Header />
+            <Header menuItems={headerMenu} themeOptions={themeOptions} />
             {children}
-            <Footer />
+            <Footer menuItems={footerMenu} themeOptions={themeOptions} />
           </AOSWrapper>
           <Toaster />
         </body>
