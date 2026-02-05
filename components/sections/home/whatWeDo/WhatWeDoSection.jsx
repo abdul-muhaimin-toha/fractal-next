@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Heading from "@/components/globals/typography/Heading";
 import { useState } from "react";
@@ -11,25 +10,14 @@ function IconItem({ item, isSelected, onClick }) {
     return (
       <div
         onClick={onClick}
-        className="relative flex aspect-square h-full w-full cursor-pointer flex-col items-stretch justify-start overflow-hidden p-2 sm:p-4 lg:p-5 transition-all duration-300"
-        style={{ backgroundColor: background_color || "#74C2CA" }}
+        className="group relative flex aspect-square w-full cursor-pointer items-center justify-center overflow-hidden bg-[#282828] transition-all duration-300"
       >
-        <div 
-          data-aos="zoom-in" 
-          className="flex aspect-square size-1/2 xl:size-24 items-center justify-center bg-[#282828] select-none"
+        <Heading
+          className="pointer-events-none text-[#74C2CA] transition-transform duration-300 select-none group-hover:scale-110"
+          style={{ color: background_color }}
         >
-          <BodyText variant="title1" className="text-[#74C2CA] pointer-events-none" style={{ color: background_color }}>
-            {card_title_short}
-          </BodyText>
-        </div>
-        <BodyText
-          data-aos="fade-up"
-          data-aos-delay="100"
-          variant="body2"
-          className="mt-auto leading-none text-[#282828] pointer-events-none select-none"
-        >
-          {item_title}
-        </BodyText>
+          {card_title_short}
+        </Heading>
       </div>
     );
   }
@@ -37,14 +25,29 @@ function IconItem({ item, isSelected, onClick }) {
   return (
     <div
       onClick={onClick}
-      className="relative flex aspect-square w-full cursor-pointer items-center justify-center overflow-hidden bg-[#282828] group transition-all duration-300"
+      className="relative flex aspect-square h-full w-full cursor-pointer flex-col items-stretch justify-start overflow-hidden p-2 transition-all duration-300 sm:p-4 lg:p-5"
+      style={{ backgroundColor: background_color || "#74C2CA" }}
     >
-      <Heading 
-        className="text-[#74C2CA] pointer-events-none select-none group-hover:scale-110 transition-transform duration-300" 
-        style={{ color: background_color }}
+      <div
+        data-aos="zoom-in"
+        className="flex aspect-square size-1/2 items-center justify-center bg-[#282828] select-none xl:size-24"
       >
-        {card_title_short}
-      </Heading>
+        <BodyText
+          variant="title1"
+          className="pointer-events-none text-[#74C2CA]"
+          style={{ color: background_color }}
+        >
+          {card_title_short}
+        </BodyText>
+      </div>
+      <BodyText
+        data-aos="fade-up"
+        data-aos-delay="100"
+        variant="body2"
+        className="pointer-events-none mt-auto leading-none text-[#282828] select-none"
+      >
+        {item_title}
+      </BodyText>
     </div>
   );
 }
@@ -68,7 +71,7 @@ function WhatWeDoContent({ selectedItem }) {
   if (!selectedItem) return null;
 
   return (
-    <div 
+    <div
       key={selectedItem._id}
       className="flex w-full flex-col gap-5 lg:mt-5 lg:gap-7.5"
     >
@@ -86,7 +89,9 @@ function WhatWeDoSection({ data }) {
   const content = data?.data || {};
   const { section_title, what_we_do_items } = content;
 
-  const [selectedItem, setSelectedItem] = useState(what_we_do_items?.[0] || null);
+  const [selectedItem, setSelectedItem] = useState(
+    what_we_do_items?.[0] || null,
+  );
 
   return (
     <section className="bg-gray">
