@@ -4,20 +4,13 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/globals/buttons/Button";
 import Link from "next/link";
 import Image from "next/image";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 // Desktop navigation
 function DesktopNav({ menuItems, themeOptions }) {
   return (
     <div className="hidden flex-col items-end gap-5 lg:flex">
-      <div className="flex flex-row items-center gap-2.5">
-        <button className="hover:text-gradient-orange cursor-pointer text-[14.4px] leading-none font-normal text-white duration-300 hover:underline">
-          English
-        </button>
-        <span className="h-4 w-px bg-white" />
-        <button className="hover:text-gradient-orange cursor-pointer text-[14.4px] leading-none font-normal text-white duration-300 hover:underline">
-          François
-        </button>
-      </div>
+      {themeOptions?.enableLanguageSwitcher && <LanguageSwitcher />}
 
       <div className="flex flex-row items-center gap-10 xl:gap-12.5">
         {menuItems.map((item) => (
@@ -72,15 +65,9 @@ function MobileNav({ onClose, menuItems, themeOptions }) {
               </Link>
             )}
 
-            <div className="flex w-full flex-row items-center justify-center gap-2.5">
-              <button className="hover:text-ocean-green text-[0.8rem] leading-none font-normal text-white duration-300 hover:underline">
-                English
-              </button>
-              <span className="h-4 w-px bg-white" />
-              <button className="hover:text-ocean-green text-[0.8rem] leading-none font-normal text-white duration-300 hover:underline">
-                François
-              </button>
-            </div>
+            {themeOptions?.enableLanguageSwitcher && (
+              <LanguageSwitcher isMobile={true} />
+            )}
           </div>
         </div>
       </div>
@@ -168,7 +155,13 @@ function Header({ menuItems, themeOptions }) {
       </div>
 
       {/* MOBILE NAV */}
-      {isMenuOpen && <MobileNav onClose={() => setIsMenuOpen(false)} menuItems={menuItems} themeOptions={themeOptions} />}
+      {isMenuOpen && (
+        <MobileNav
+          onClose={() => setIsMenuOpen(false)}
+          menuItems={menuItems}
+          themeOptions={themeOptions}
+        />
+      )}
     </>
   );
 }

@@ -9,6 +9,7 @@ export const getLayoutDataQuery = gql`
         uri
       }
       buttonText
+      enableLanguageSwitcher
       email
       websiteLogo
       websiteFavicon
