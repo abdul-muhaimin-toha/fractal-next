@@ -6,7 +6,7 @@ import Link from "next/link";
 function FooterLogo({ themeOptions }) {
   if (!themeOptions?.websiteLogo) return null;
   return (
-    <Link href="/">
+    <Link href="/" className="!opacity-100">
       <Image
         className="aspect-112/56 shrink-0 object-contain md:w-35 lg:w-49"
         src={themeOptions.websiteLogo}

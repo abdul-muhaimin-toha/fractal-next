@@ -1,3 +1,5 @@
+"use client";
+
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Image from "next/image";
 
@@ -27,7 +29,7 @@ function TheChallengeSection({ data }) {
                       variant="body1"
                       className="text-white opacity-80"
                     >
-                      {item.content_text || item}
+                      {item.content_text || (typeof item === 'string' ? item : "")}
                     </BodyText>
                   ))}
               </div>

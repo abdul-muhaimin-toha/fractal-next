@@ -11,7 +11,18 @@ import TheSolutionSection from "./sections/caseStudy/theSolutions/TheSolutionSec
 import CaseStudyWhatWeDoSection from "./sections/caseStudy/whatWeDo/WhatWeDoSection";
 import ContactUsGetInTouch from "./sections/contactUs/GetInTouch";
 import GetInTouch from "./sections/globals/getInTouch/GetInTouch";
+import DetailsSection from "./sections/globals/details/DetailsSection";
+import HeadingSection from "./sections/globals/heading/HeadingSection";
 import GlobalHeroSection from "./sections/globals/hero/HeroSection";
+import ListSection from "./sections/globals/list/ListSection";
+import ParagraphSection from "./sections/globals/paragraph/ParagraphSection";
+import QuoteSection from "./sections/globals/quote/QuoteSection";
+import CodeSection from "./sections/globals/code/CodeSection";
+import MathSection from "./sections/globals/math/MathSection";
+import PreformattedSection from "./sections/globals/preformatted/PreformattedSection";
+import VerseSection from "./sections/globals/verse/VerseSection";
+import RichContentSection from "./sections/globals/richContent/RichContentSection";
+import TableSection from "./sections/globals/table/TableSection";
 import GlobalOurWorkSection from "./sections/globals/ourWork/OurWorkSection";
 import HeroSection from "./sections/home/hero/HeroSection";
 import InsightsSection from "./sections/home/insights/InsightsSection";
@@ -76,6 +87,24 @@ const blockComponentsMapping = {
   // thank you page
   // //////////////////////
   "carbon-fields/thank-you-hero" : ThankYouHeroSection,
+
+  // //////////////////////
+  // core blocks
+  // //////////////////////
+  "carbon-fields/core-paragraph": ParagraphSection,
+  "carbon-fields/stretchy-paragraph": ParagraphSection,
+  "carbon-fields/core-heading": HeadingSection,
+  "carbon-fields/stretchy-heading": HeadingSection,
+  "carbon-fields/core-list": ListSection,
+  "carbon-fields/core-quote": QuoteSection,
+  "carbon-fields/core-pullquote": QuoteSection,
+  "carbon-fields/core-code": CodeSection,
+  "carbon-fields/core-math": MathSection,
+  "carbon-fields/core-preformatted": PreformattedSection,
+  "carbon-fields/core-verse": VerseSection,
+  "carbon-fields/core-classic": ParagraphSection,
+  "carbon-fields/core-table": TableSection,
+  "carbon-fields/core-details": DetailsSection,
 };
 
 export default blockComponentsMapping;

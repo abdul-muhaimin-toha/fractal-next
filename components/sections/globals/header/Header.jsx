@@ -106,7 +106,7 @@ function Header({ menuItems, themeOptions }) {
             {/* LOGO */}
             <Link
               href="/"
-              className="flex w-22 cursor-pointer items-center justify-center lg:w-36 xl:w-49"
+              className="flex w-22 cursor-pointer items-center justify-center !opacity-100 lg:w-36 xl:w-49"
               onClick={() => setIsMenuOpen(false)}
             >
               {themeOptions?.websiteLogo && (

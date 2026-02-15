@@ -35,7 +35,6 @@ function TheResultsSection({ data }) {
                   return (
                     <div
                       key={idx}
-                      data-aos={aos}
                       className={`flex aspect-video h-auto w-full flex-col items-center justify-center gap-6 text-center sm:aspect-square ${colSpan} ${
                         idx === 1 ? "lg:aspect-auto" : ""
                       }`}

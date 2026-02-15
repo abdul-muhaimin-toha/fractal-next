@@ -121,6 +121,27 @@
   .container-fractal {
     @apply mx-auto w-full max-w-353 px-5 md:px-6 lg:px-7 xl:px-8;
   }
+
+
+  a {
+    @apply transition-opacity duration-300 hover:opacity-80;
+  }
+
+  .prose-links a {
+    @apply text-ocean-blue underline cursor-pointer hover:text-ocean-blue/80;
+  }
+
+  .prose-links ul {
+    @apply list-disc list-outside ml-6 space-y-2 marker:text-ocean-blue;
+  }
+
+  .prose-links ol {
+    @apply list-decimal list-outside ml-6 space-y-2 marker:text-ocean-blue marker:font-bold;
+  }
+
+  .prose-links li {
+    @apply pl-2;
+  }
 }
 
 .swiper-pagination-bullet {
