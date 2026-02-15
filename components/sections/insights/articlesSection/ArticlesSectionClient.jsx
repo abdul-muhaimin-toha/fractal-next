@@ -27,7 +27,7 @@ function CategoryTabs({ categories, activeCategory, onChange }) {
               : "relative z-10 text-xl font-semibold text-nowrap text-white xl:text-2xl"
           }
         >
-          All article
+          All Articles
         </span>
       </button>
 

@@ -5,10 +5,19 @@ import ProjectsSliderContainer from "./ProjectsSliderContainer";
 
 export default async function ProjectsSection({ data }) {
   const content = data?.data || {};
-  const { button_text, button_page, open_in_new_tab, projects } = content;
+  const {
+    button_text,
+    button_page,
+    open_in_new_tab,
+    projects,
+    custom_url,
+    link_source,
+  } = content;
 
-  let buttonHref = "/";
-  if (Array.isArray(button_page) && button_page.length > 0) {
+  let buttonHref = "#";
+  if (link_source === "custom") {
+    buttonHref = custom_url || "#";
+  } else if (Array.isArray(button_page) && button_page.length > 0) {
     const pageId = button_page[0]?.id;
     if (pageId) {
       buttonHref = await getUriByDbId(pageId);

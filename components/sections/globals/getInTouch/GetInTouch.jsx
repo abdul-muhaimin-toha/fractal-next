@@ -6,8 +6,10 @@ import { Button } from "@/components/globals/buttons/Button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { toast } from "sonner";
+import { getUriByDbId } from "@/graphql/components/getUriByDbId";
 
 const fields = [
   { name: "name", label: "Name (required)", required: true },
@@ -17,11 +19,18 @@ const fields = [
 ];
 
 function GetInTouch({ data }) {
+  const router = useRouter();
   const content = data?.data;
 
   if (!content) return null;
 
-  const { title, description } = content;
+  const {
+    title,
+    description,
+    redirect_page,
+    redirect_source,
+    redirect_custom_url,
+  } = content;
 
   const {
     register,
@@ -46,7 +55,16 @@ function GetInTouch({ data }) {
       );
 
       if (response.ok) {
-        toast.success("Message sent successfully!");
+        let redirectUrl = "/";
+        if (redirect_source === "custom") {
+          redirectUrl = redirect_custom_url || "/";
+        } else if (Array.isArray(redirect_page) && redirect_page.length > 0) {
+          const pageId = redirect_page[0]?.id;
+          if (pageId) {
+            redirectUrl = await getUriByDbId(pageId);
+          }
+        }
+        router.push(redirectUrl);
         reset();
       } else {
         toast.error("Failed to send message. Please try again.");
@@ -72,7 +90,7 @@ function GetInTouch({ data }) {
               </Heading>
             )}
             {description && (
-              <BodyText variant="body3" className="max-w-md lg:max-w-125.75">
+              <BodyText variant="body3" className="max-w-md lg:max-w-max whitespace-pre-line">
                 {description}
               </BodyText>
             )}

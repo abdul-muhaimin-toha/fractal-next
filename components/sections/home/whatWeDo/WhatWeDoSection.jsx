@@ -44,7 +44,7 @@ function IconItem({ item, isSelected, onClick }) {
         data-aos="fade-up"
         data-aos-delay="100"
         variant="body2"
-        className="pointer-events-none mt-auto leading-none text-[#282828] select-none"
+        className="pointer-events-none mt-auto leading-none text-[#282828] select-none whitespace-pre-line"
       >
         {item_title}
       </BodyText>
@@ -78,7 +78,7 @@ function WhatWeDoContent({ selectedItem }) {
       <BodyText variant="body2" className="text-black">
         {selectedItem.item_title}
       </BodyText>
-      <BodyText className="text-black" variant="body1">
+      <BodyText className="text-black whitespace-pre-line" variant="body1">
         {selectedItem.item_description}
       </BodyText>
     </div>

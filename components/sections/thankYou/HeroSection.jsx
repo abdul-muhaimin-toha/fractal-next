@@ -45,13 +45,13 @@ export default async function HeroSection({ data }) {
     button_text,
     button_page,
     open_in_new_tab,
-    link_type,
     custom_url,
+    link_source,
   } = content;
 
-  let buttonHref = "/";
-  if (link_type === "external") {
-    buttonHref = custom_url || "/";
+  let buttonHref = "#";
+  if (link_source === "custom") {
+    buttonHref = custom_url || "#";
   } else if (Array.isArray(button_page) && button_page.length > 0) {
     const pageId = button_page[0]?.id;
     if (pageId) {

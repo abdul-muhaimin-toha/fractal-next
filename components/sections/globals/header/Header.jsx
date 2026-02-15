@@ -25,7 +25,11 @@ function DesktopNav({ menuItems, themeOptions }) {
 
         {themeOptions?.buttonText && (
           <Button
-            href={themeOptions?.buttonPage?.[0]?.uri || "#"}
+            href={
+              themeOptions?.linkSource?.value === "custom"
+                ? themeOptions?.customUrl
+                : themeOptions?.buttonPage?.[0]?.uri || "#"
+            }
             variant="gradient"
           >
             {themeOptions.buttonText}
@@ -58,7 +62,13 @@ function MobileNav({ onClose, menuItems, themeOptions }) {
 
           <div className="absolute right-0 bottom-0 left-0 mb-5 flex w-full flex-col gap-5">
             {themeOptions?.buttonText && (
-              <Link href={themeOptions?.buttonPage?.[0]?.uri || "#"}>
+              <Link
+                href={
+                  themeOptions?.linkSource?.value === "custom"
+                    ? themeOptions?.customUrl
+                    : themeOptions?.buttonPage?.[0]?.uri || "#"
+                }
+              >
                 <Button variant="gradient" className="w-full" onClick={onClose}>
                   {themeOptions.buttonText}
                 </Button>

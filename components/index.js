@@ -21,6 +21,7 @@ import TestimonialSection from "./sections/home/testimonials/TestimonialSection"
 import WhatWeDoSection from "./sections/home/whatWeDo/WhatWeDoSection";
 import ArticlesSection from "./sections/insights/articlesSection/ArticlesSection";
 import OurWorkSection from "./sections/ourWork/ourWorkSection/OurWorkSection";
+import ThankYouHeroSection from "./sections/thankYou/HeroSection";
 
 const blockComponentsMapping = {
   // //////////////////////
@@ -70,6 +71,11 @@ const blockComponentsMapping = {
   // contact-us
   // //////////////////////
   "carbon-fields/contact-us" : ContactUsGetInTouch,
+
+  // //////////////////////
+  // thank you page
+  // //////////////////////
+  "carbon-fields/thank-you-hero" : ThankYouHeroSection,
 };
 
 export default blockComponentsMapping;
