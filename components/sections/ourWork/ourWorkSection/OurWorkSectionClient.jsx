@@ -14,7 +14,7 @@ function ProjectCard({ project }) {
 
   return (
     <Link
-      href={`/our-works/${slug}`}
+      href={`/our-work/${slug}`}
       className="group flex w-full flex-col gap-5"
     >
       <div className="relative aspect-664/500 w-full overflow-hidden">

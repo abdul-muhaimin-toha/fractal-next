@@ -1,4 +1,3 @@
-
 import FractalTeamSection from "./sections/aboutUs/fractalTeam/FractalTeamSection";
 import AboutUsHeroSection from "./sections/aboutUs/hero/HeroSection";
 import BeyondTheMatrixSection from "./sections/caseStudy/beyondTheMatrix/BeyondTheMatrixSection";
@@ -52,41 +51,41 @@ const blockComponentsMapping = {
   // about-us
   // //////////////////////
 
-  "carbon-fields/about-us-hero" : AboutUsHeroSection,
-  "carbon-fields/team-member-showcase" : FractalTeamSection,
+  "carbon-fields/about-us-hero": AboutUsHeroSection,
+  "carbon-fields/team-member-showcase": FractalTeamSection,
 
   // //////////////////////
   // insights
   // //////////////////////
-  "carbon-fields/hero-insight" : GlobalHeroSection,
-  "carbon-fields/all-insights-showcase" : ArticlesSection,
+  "carbon-fields/hero-insight": GlobalHeroSection,
+  "carbon-fields/all-insights-showcase": ArticlesSection,
 
   // //////////////////////
-  // our-works
+  // our-work
   // //////////////////////
-  "carbon-fields/all-projects-showcase" : OurWorkSection,
+  "carbon-fields/all-projects-showcase": OurWorkSection,
 
   // //////////////////////
-  //  our-works details
+  //  our-work details
   // //////////////////////
-  "carbon-fields/project-overview" : OverviewSection,
-  "carbon-fields/project-scope" : ProjectScope,
-  "carbon-fields/project-challenge" : TheChallengeSection,
-  "carbon-fields/project-detail-entries" : Resources,
-  "carbon-fields/project-solution" : TheSolutionSection,
-  "carbon-fields/what-we-did" : CaseStudyWhatWeDoSection,
-  "carbon-fields/project-results" : TheResultsSection,
-  "carbon-fields/project-beyond-metrics" : BeyondTheMatrixSection,
+  "carbon-fields/project-overview": OverviewSection,
+  "carbon-fields/project-scope": ProjectScope,
+  "carbon-fields/project-challenge": TheChallengeSection,
+  "carbon-fields/project-detail-entries": Resources,
+  "carbon-fields/project-solution": TheSolutionSection,
+  "carbon-fields/what-we-did": CaseStudyWhatWeDoSection,
+  "carbon-fields/project-results": TheResultsSection,
+  "carbon-fields/project-beyond-metrics": BeyondTheMatrixSection,
 
   // //////////////////////
   // contact-us
   // //////////////////////
-  "carbon-fields/contact-us" : ContactUsGetInTouch,
+  "carbon-fields/contact-us": ContactUsGetInTouch,
 
   // //////////////////////
   // thank you page
   // //////////////////////
-  "carbon-fields/thank-you-hero" : ThankYouHeroSection,
+  "carbon-fields/thank-you-hero": ThankYouHeroSection,
 
   // //////////////////////
   // core blocks

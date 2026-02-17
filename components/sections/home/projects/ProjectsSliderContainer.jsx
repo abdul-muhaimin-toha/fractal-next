@@ -14,7 +14,7 @@ function ProjectSlide({ title, subtitle, image, href }) {
 
   return (
     <Link
-      href={`/our-works/${href}`}
+      href={`/our-work/${href}`}
       className="group relative flex aspect-322/310 w-full overflow-hidden"
     >
       {image && (
@@ -34,7 +34,7 @@ function ProjectSlide({ title, subtitle, image, href }) {
       {/* Text */}
       <BodyText
         variant="title2"
-        className="absolute line-clamp-2 bottom-7.5 left-4.5 right-4.5 z-20 text-white group-hover:underline"
+        className="absolute right-4.5 bottom-7.5 left-4.5 z-20 line-clamp-2 text-white group-hover:underline"
       >
         {title}
         {subtitle && (

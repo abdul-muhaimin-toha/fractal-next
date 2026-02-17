@@ -6,6 +6,20 @@ import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { ChevronDown } from "lucide-react";
+
 // Desktop navigation
 function DesktopNav({ menuItems, themeOptions }) {
   return (
@@ -13,15 +27,47 @@ function DesktopNav({ menuItems, themeOptions }) {
       {themeOptions?.enableLanguageSwitcher && <LanguageSwitcher />}
 
       <div className="flex flex-row items-center gap-10 xl:gap-12.5">
-        {menuItems.map((item) => (
-          <Link
-            key={item.id}
-            href={item.uri}
-            className="hover:text-ocean-orange text-base leading-none font-medium duration-300 xl:text-[1.2rem]"
-          >
-            {item.label}
-          </Link>
-        ))}
+        {menuItems.map((item) => {
+          const hasChildren = item.children && item.children.length > 0;
+
+          if (hasChildren) {
+            return (
+              <DropdownMenu key={item.id} modal={false}>
+                <DropdownMenuTrigger asChild>
+                  <button className="hover:text-ocean-orange flex cursor-pointer items-center gap-2 justify-center border-none bg-transparent p-0 text-base font-medium leading-none duration-300 outline-none xl:text-[1.2rem] [&[data-state=open]>svg]:rotate-180">
+                    {item.label}
+                    <ChevronDown className="size-5 transition-transform duration-200" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="start"
+                  className="bg-black hidden lg:block -translate-x-1/12 border-white/10 min-w-[200px] z-[60] mt-8 rounded-sm"
+                >
+                  {item.children.map((child) => (
+                    <DropdownMenuItem key={child.id} asChild className="rounded-sm cursor-pointer">
+                      <Link
+                        href={child.uri}
+                        className="hover:text-ocean-orange block w-full px-4 py-2 text-sm text-white duration-300"
+                      >
+                        {child.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            );
+          }
+
+          return (
+            <Link
+              key={item.id}
+              href={item.uri}
+              className="hover:text-ocean-orange text-base font-medium leading-none duration-300 xl:text-[1.2rem]"
+            >
+              {item.label}
+            </Link>
+          );
+        })}
 
         {themeOptions?.buttonText && (
           <Button
@@ -41,44 +87,78 @@ function DesktopNav({ menuItems, themeOptions }) {
 }
 
 // Mobile navigation
-
 function MobileNav({ onClose, menuItems, themeOptions }) {
   return (
-    <div className="fixed inset-0 z-40 flex w-full items-center justify-center bg-black lg:hidden">
-      <div className="container-fractal">
-        <div className="relative flex h-screen w-full flex-col items-center justify-center text-center">
-          <div className="flex w-full flex-col items-center justify-center gap-12">
-            {menuItems.map((item) => (
-              <Link
-                key={item.id}
-                href={item.uri}
-                className="hover:text-ocean-orange w-full text-base leading-none font-medium duration-300 xl:text-[1.2rem]"
-                onClick={onClose}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
+    <div className="fixed inset-0 z-40 bg-black overflow-y-auto lg:hidden">
+      <div className="container-fractal flex min-h-full flex-col">
+        {/* Navigation links */}
+        <div className="flex flex-1 flex-col items-center justify-start pt-32 pb-16 text-center">
+          <div className="flex w-full flex-col items-center gap-10">
+            {menuItems.map((item) => {
+              const hasChildren = item.children && item.children.length > 0;
 
-          <div className="absolute right-0 bottom-0 left-0 mb-5 flex w-full flex-col gap-5">
-            {themeOptions?.buttonText && (
-              <Link
-                href={
-                  themeOptions?.linkSource?.value === "custom"
-                    ? themeOptions?.customUrl
-                    : themeOptions?.buttonPage?.[0]?.uri || "#"
-                }
-              >
-                <Button variant="gradient" className="w-full" onClick={onClose}>
-                  {themeOptions.buttonText}
-                </Button>
-              </Link>
-            )}
+              if (hasChildren) {
+                return (
+                  <Accordion
+                    key={item.id}
+                    type="single"
+                    collapsible
+                    className="w-full"
+                  >
+                    <AccordionItem value={item.id} className="border-none">
+                      <AccordionTrigger className="hover:text-ocean-orange flex w-full justify-center gap-2 py-0 text-base font-medium leading-none duration-300 hover:no-underline xl:text-[1.2rem] ml-6">
+                        {item.label}
+                      </AccordionTrigger>
+                      <AccordionContent className="flex flex-col gap-6 pt-8 pb-0">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.id}
+                            href={child.uri}
+                            className="hover:text-ocean-orange text-sm font-medium leading-none duration-300"
+                            onClick={onClose}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                );
+              }
 
-            {themeOptions?.enableLanguageSwitcher && (
-              <LanguageSwitcher isMobile={true} />
-            )}
+              return (
+                <Link
+                  key={item.id}
+                  href={item.uri}
+                  className="hover:text-ocean-orange w-full text-base font-medium leading-none duration-300 xl:text-[1.2rem]"
+                  onClick={onClose}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
+        </div>
+
+        {/* Action items at bottom */}
+        <div className="mt-auto flex w-full flex-col gap-5 pb-10">
+          {themeOptions?.buttonText && (
+            <Link
+              href={
+                themeOptions?.linkSource?.value === "custom"
+                  ? themeOptions?.customUrl
+                  : themeOptions?.buttonPage?.[0]?.uri || "#"
+              }
+            >
+              <Button variant="gradient" className="w-full" onClick={onClose}>
+                {themeOptions.buttonText}
+              </Button>
+            </Link>
+          )}
+
+          {themeOptions?.enableLanguageSwitcher && (
+            <LanguageSwitcher isMobile={true} />
+          )}
         </div>
       </div>
     </div>

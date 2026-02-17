@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 // Required Catch-all Route for Static Site Generation (Home is handled in app/page.jsx)
 export async function generateStaticParams() {
   const uris = await getAllUris();
-  
+
   // Return split slugs for all available pages
   return uris.map((uri) => ({
     slug: uri.split("/"),
@@ -16,10 +16,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  
+
   // Handle path mappings
   let uri = `/${slug.join("/")}`;
-  if (slug[0] === "our-works" && slug.length > 1) {
+  if (slug[0] === "our-work" && slug.length > 1) {
     uri = `/projects/${slug.slice(1).join("/")}`;
   }
 
@@ -32,10 +32,10 @@ export async function generateMetadata({ params }) {
 
 export default async function CatchAllPage({ params }) {
   const { slug } = await params;
-  
+
   // Handle path mappings
   let uri = `/${slug.join("/")}`;
-  if (slug[0] === "our-works" && slug.length > 1) {
+  if (slug[0] === "our-work" && slug.length > 1) {
     uri = `/projects/${slug.slice(1).join("/")}`;
   }
 

@@ -30,8 +30,10 @@ export const getLayoutDataQuery = gql`
             edges {
               node {
                 id
+                databaseId
                 uri
                 label
+                parentDatabaseId
               }
             }
           }
