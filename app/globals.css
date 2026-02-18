@@ -122,6 +122,10 @@
     @apply mx-auto w-full max-w-353 px-5 md:px-6 lg:px-7 xl:px-8;
   }
 
+  .container-fractal-sm {
+    @apply mx-auto w-full max-w-310 px-5 md:px-6 lg:px-7 xl:px-8;
+  }
+
 
   a {
     @apply transition-opacity duration-300 hover:opacity-80;

@@ -15,7 +15,7 @@ export default function ListSection({ data }) {
 
   return (
     <section className="bg-dark relative py-3 lg:py-6">
-      <div className="container-fractal">
+      <div className="container-fractal-sm">
         <Tag className={cn(
           "flex flex-col gap-6",
           Tag === "ul" ? "list-none" : "list-none [counter-reset:list-counter]"

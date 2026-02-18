@@ -14,7 +14,7 @@ export default function ParagraphSection({ data }) {
 
   return (
     <section className="bg-dark relative overflow-hidden py-3 lg:py-6">
-      <div className="container-fractal relative z-10">
+      <div className="container-fractal-sm relative z-10">
         <div className="relative w-full">
           <BodyText
             as="div"

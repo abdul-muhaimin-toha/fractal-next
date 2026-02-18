@@ -14,7 +14,7 @@ export default function DetailsSection({ data }) {
 
   return (
     <section className="bg-dark relative py-3 lg:py-6">
-      <div className="container-fractal">
+      <div className="container-fractal-sm">
         <details className="group border-b border-white/10 pb-6 open:pb-12">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4">
             <BodyText variant="title2" className="hover:text-white/80 transition-colors">

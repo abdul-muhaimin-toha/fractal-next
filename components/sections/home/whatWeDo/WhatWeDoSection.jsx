@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/globals/buttons/Button";
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Heading from "@/components/globals/typography/Heading";
 import { useState } from "react";
@@ -39,7 +40,7 @@ function IconItem({ item, isSelected, onClick }) {
       </div>
       <BodyText
         variant="body2"
-        className="pointer-events-none mt-auto leading-none text-[#282828] select-none whitespace-pre-line"
+        className="pointer-events-none mt-auto leading-none whitespace-pre-line text-[#282828] select-none"
       >
         {item_title}
       </BodyText>
@@ -65,17 +66,47 @@ function IconsGrid({ items, selectedItem, onSelect }) {
 function WhatWeDoContent({ selectedItem }) {
   if (!selectedItem) return null;
 
+  const {
+    item_title,
+    item_description,
+    button_text,
+    link_source,
+    custom_url,
+    button_page,
+    open_in_new_tab,
+  } = selectedItem;
+
+  let buttonHref = "#";
+
+  if (link_source === "custom") {
+    buttonHref = custom_url || "#";
+  } else if (Array.isArray(button_page) && button_page.length > 0) {
+    buttonHref = button_page[0]?.uri || "#";
+  }
+
   return (
     <div
       key={selectedItem._id}
       className="flex w-full flex-col gap-5 lg:mt-5 lg:gap-7.5"
     >
       <BodyText variant="body2" className="text-black">
-        {selectedItem.item_title}
+        {item_title}
       </BodyText>
-      <BodyText className="text-black whitespace-pre-line" variant="body1">
-        {selectedItem.item_description}
+
+      <BodyText className="whitespace-pre-line text-black" variant="body1">
+        {item_description}
       </BodyText>
+
+      {buttonHref && button_text && (
+        <Button
+          variant="gradient"
+          href={buttonHref}
+          target={open_in_new_tab ? "_blank" : "_self"}
+          className="mt-4 w-fit"
+        >
+          {button_text}
+        </Button>
+      )}
     </div>
   );
 }

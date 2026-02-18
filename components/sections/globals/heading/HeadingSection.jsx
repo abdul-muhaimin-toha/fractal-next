@@ -12,7 +12,7 @@ export default function HeadingSection({ data }) {
 
   return (
     <section className="bg-dark relative py-3 lg:py-6">
-      <div className="container-fractal">
+      <div className="container-fractal-sm">
         <div className="relative w-fit">
           <Heading
             as={level || "h2"}

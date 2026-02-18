@@ -13,7 +13,7 @@ export default function QuoteSection({ data }) {
 
   return (
     <section className="bg-dark relative py-3 lg:py-6">
-      <div className="container-fractal">
+      <div className="container-fractal-sm">
         <div className="relative border-l-4 border-ocean-blue pl-8 md:pl-12">
           <BodyText 
             variant="title3" 

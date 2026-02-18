@@ -13,7 +13,7 @@ export default function TableSection({ data }) {
 
   return (
     <section className="bg-dark relative py-3 lg:py-6">
-      <div className="container-fractal">
+      <div className="container-fractal-sm">
         <div className="w-full overflow-x-auto rounded-xl border border-white/10 bg-black/20">
           <table className="w-full border-collapse text-left">
             <tbody>

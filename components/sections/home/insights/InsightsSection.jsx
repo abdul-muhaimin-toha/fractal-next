@@ -42,6 +42,7 @@ export default async function InsightsSection({ data }) {
     section_title,
     custom_url,
     link_source,
+    button_text,
   } = content;
 
   let buttonHref = "#";
@@ -107,7 +108,9 @@ export default async function InsightsSection({ data }) {
               target={open_in_new_tab ? "_blank" : "_self"}
               variant="icon"
               className="z-10 md:self-start"
-            />
+            >
+              {button_text}
+            </Button>
           )}
         </div>
 
@@ -119,7 +122,6 @@ export default async function InsightsSection({ data }) {
           height={606}
           className="absolute inset-0 z-0 h-full w-full object-cover object-bottom-right sm:hidden"
         />
-
         <Image
           src="/home/our-insights/bg-desktop.svg"
           alt="Insights background"

@@ -2,8 +2,6 @@ import { KoHo } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/sections/globals/footer/Footer";
 import Header from "@/components/sections/globals/header/Header";
-import ReactLenis from "lenis/react";
-import AOSWrapper from "@/utils/aos-wrapper";
 import { Toaster } from "@/components/ui/sonner";
 import { getLayoutData } from "@/graphql/components/getLayoutData";
 
@@ -37,16 +35,13 @@ export default async function RootLayout({ children }) {
       <head>
         {preconnectUrl && <link rel="preconnect" href={preconnectUrl} />}
       </head>
-      <ReactLenis root>
-        <body className={`${kohoSans.variable} antialiased`}>
-          <AOSWrapper>
-            <Header menuItems={headerMenu} themeOptions={themeOptions} />
-            {children}
-            <Footer menuItems={footerMenu} themeOptions={themeOptions} />
-          </AOSWrapper>
-          <Toaster />
-        </body>
-      </ReactLenis>
+
+      <body className={`${kohoSans.variable} antialiased`}>
+        <Header menuItems={headerMenu} themeOptions={themeOptions} />
+        {children}
+        <Footer menuItems={footerMenu} themeOptions={themeOptions} />
+        <Toaster />
+      </body>
     </html>
   );
 }
