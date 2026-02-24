@@ -70,8 +70,6 @@ export default async function OurWorkSection({ data }) {
     link_source,
   } = content;
 
-  console.log(content);
-
   let buttonHref = null;
   if (link_source === "custom" && custom_url) {
     buttonHref = custom_url;
