@@ -22,7 +22,7 @@ function FooterLogo({ themeOptions }) {
 
 function FooterLinks({ menuItems }) {
   return (
-    <div className="grid w-full grid-cols-2 gap-x-7.5 gap-y-4 md:max-w-67.5 md:gap-x-4 lg:max-w-max lg:gap-x-20 xl:gap-x-12.5 2xl:gap-x-12.5">
+    <div className="grid w-full grid-cols-2 gap-x-7.5 gap-y-0 md:max-w-67.5 md:gap-x-4 lg:max-w-max lg:gap-x-20 xl:gap-x-12.5 2xl:gap-x-12.5">
       {menuItems?.map(({ label, uri, id }) => (
         <Link
           key={id}
