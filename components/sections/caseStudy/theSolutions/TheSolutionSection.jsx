@@ -42,14 +42,6 @@ function TheSolutionSection({ data }) {
                       height={270}
                       unoptimized={true}
                     />
-                    <Image
-                      src={image}
-                      alt={section_title || "Solution Image"}
-                      className="h-full w-full object-contain"
-                      width={562}
-                      height={270}
-                      unoptimized={true}
-                    />
                   </>
                 )}
               </div>

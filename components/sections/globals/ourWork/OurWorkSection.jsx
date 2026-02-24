@@ -25,7 +25,7 @@ function OurWorkContent({
               variant="body3"
               className="decoration-ocean-green mt-5 opacity-80"
             >
-              Author: {authorName}
+              {authorName}
             </BodyText>
           )}
         </div>
