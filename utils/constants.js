@@ -10,6 +10,6 @@ export const SEO_CONSTANTS = {
 
   opengraphImage: {},
   featuredImage: {},
-  defaultImageUrl: "/fractal-logo.svg",
-  twitterImageUrl: "fractal-logo.svg",
+  defaultImageUrl: "https://cms.fractalcommunications.ca/wp-content/uploads/2026/02/Fractal-logo-2.svg",
+  twitterImageUrl: "https://cms.fractalcommunications.ca/wp-content/uploads/2026/02/Fractal-logo-2.svg",
 };
