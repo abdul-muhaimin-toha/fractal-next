@@ -10,8 +10,6 @@ export const SEO_CONSTANTS = {
 
   opengraphImage: {},
   featuredImage: {},
-  defaultImageUrl:
-    "https://dashboard.sentrysecuritybd.com/wp-content/uploads/2026/01/main-logo.webp",
-  twitterImageUrl:
-    "https://dashboard.sentrysecuritybd.com/wp-content/uploads/2026/01/main-logo.webp",
+  defaultImageUrl: "/fractal-logo.svg",
+  twitterImageUrl: "fractal-logo.svg",
 };
