@@ -57,6 +57,8 @@ function GetInTouch({ data }) {
         },
       );
 
+      console.log(response);
+
       if (response.ok) {
         let redirectUrl = "/";
         if (redirect_source === "custom") {
@@ -93,7 +95,10 @@ function GetInTouch({ data }) {
               </Heading>
             )}
             {section_description && (
-              <BodyText variant="body3" className="max-w-md lg:max-w-max whitespace-pre-line">
+              <BodyText
+                variant="body3"
+                className="max-w-md whitespace-pre-line lg:max-w-max"
+              >
                 {section_description}
               </BodyText>
             )}
