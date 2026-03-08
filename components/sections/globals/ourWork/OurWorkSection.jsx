@@ -99,7 +99,6 @@ export default async function OurWorkSection({ data }) {
             <Image
               src={background_image}
               alt={section_title || "Our work background"}
-              unoptimized={true}
               fill
               className="absolute w-full object-cover object-[25%_80%] sm:object-center"
             />

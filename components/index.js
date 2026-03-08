@@ -1,109 +1,150 @@
-import FractalTeamSection from "./sections/aboutUs/fractalTeam/FractalTeamSection";
-import AboutUsHeroSection from "./sections/aboutUs/hero/HeroSection";
-import BeyondTheMatrixSection from "./sections/caseStudy/beyondTheMatrix/BeyondTheMatrixSection";
-import OverviewSection from "./sections/caseStudy/overview/OverviewSection";
-import ProjectScope from "./sections/caseStudy/projectScope/ProjectScope";
-import Resources from "./sections/caseStudy/resources/Resources";
-import TheChallengeSection from "./sections/caseStudy/theChallenge/TheChallengeSection";
-import TheResultsSection from "./sections/caseStudy/theResults/TheResultsSection";
-import TheSolutionSection from "./sections/caseStudy/theSolutions/TheSolutionSection";
-import CaseStudyWhatWeDoSection from "./sections/caseStudy/whatWeDo/WhatWeDoSection";
-import ContactUsGetInTouch from "./sections/contactUs/GetInTouch";
-import GetInTouch from "./sections/globals/getInTouch/GetInTouch";
-import DetailsSection from "./sections/globals/details/DetailsSection";
-import HeadingSection from "./sections/globals/heading/HeadingSection";
-import GlobalHeroSection from "./sections/globals/hero/HeroSection";
-import ListSection from "./sections/globals/list/ListSection";
-import ParagraphSection from "./sections/globals/paragraph/ParagraphSection";
-import QuoteSection from "./sections/globals/quote/QuoteSection";
-import CodeSection from "./sections/globals/code/CodeSection";
-import MathSection from "./sections/globals/math/MathSection";
-import PreformattedSection from "./sections/globals/preformatted/PreformattedSection";
-import VerseSection from "./sections/globals/verse/VerseSection";
-import RichContentSection from "./sections/globals/richContent/RichContentSection";
-import TableSection from "./sections/globals/table/TableSection";
-import GlobalOurWorkSection from "./sections/globals/ourWork/OurWorkSection";
-import HeroSection from "./sections/home/hero/HeroSection";
-import InsightsSection from "./sections/home/insights/InsightsSection";
-import OurClientsSection from "./sections/home/ourclients/OurClientsSection";
-import ProjectsSection from "./sections/home/projects/ProjectsSection";
-import TestimonialSection from "./sections/home/testimonials/TestimonialSection";
-import WhatWeDoSection from "./sections/home/whatWeDo/WhatWeDoSection";
-import ArticlesSection from "./sections/insights/articlesSection/ArticlesSection";
-import OurWorkSection from "./sections/ourWork/ourWorkSection/OurWorkSection";
-import ThankYouHeroSection from "./sections/thankYou/HeroSection";
+import dynamic from "next/dynamic";
 
 const blockComponentsMapping = {
   // //////////////////////
   // homepage
   // //////////////////////
 
-  "carbon-fields/hero": HeroSection,
-  "carbon-fields/our-work": GlobalOurWorkSection,
-  "carbon-fields/project-selected-showcase": ProjectsSection,
-  "carbon-fields/insight-selected-showcase": InsightsSection,
-  "carbon-fields/what-we-do": WhatWeDoSection,
-  "carbon-fields/our-clients": OurClientsSection,
-  "carbon-fields/testimonials": TestimonialSection,
-  "carbon-fields/get-in-touch": GetInTouch,
+  "carbon-fields/hero": dynamic(() =>
+    import("./sections/home/hero/HeroSection"),
+  ),
+  "carbon-fields/our-work": dynamic(() =>
+    import("./sections/globals/ourWork/OurWorkSection"),
+  ),
+  "carbon-fields/project-selected-showcase": dynamic(() =>
+    import("./sections/home/projects/ProjectsSection"),
+  ),
+  "carbon-fields/insight-selected-showcase": dynamic(() =>
+    import("./sections/home/insights/InsightsSection"),
+  ),
+  "carbon-fields/what-we-do": dynamic(() =>
+    import("./sections/home/whatWeDo/WhatWeDoSection"),
+  ),
+  "carbon-fields/our-clients": dynamic(() =>
+    import("./sections/home/ourclients/OurClientsSection"),
+  ),
+  "carbon-fields/testimonials": dynamic(() =>
+    import("./sections/home/testimonials/TestimonialSection"),
+  ),
+  "carbon-fields/get-in-touch": dynamic(() =>
+    import("./sections/globals/getInTouch/GetInTouch"),
+  ),
 
   // //////////////////////
   // about-us
   // //////////////////////
 
-  "carbon-fields/about-us-hero": AboutUsHeroSection,
-  "carbon-fields/team-member-showcase": FractalTeamSection,
+  "carbon-fields/about-us-hero": dynamic(() =>
+    import("./sections/aboutUs/hero/HeroSection"),
+  ),
+  "carbon-fields/team-member-showcase": dynamic(() =>
+    import("./sections/aboutUs/fractalTeam/FractalTeamSection"),
+  ),
 
   // //////////////////////
   // insights
   // //////////////////////
-  "carbon-fields/hero-insight": GlobalHeroSection,
-  "carbon-fields/all-insights-showcase": ArticlesSection,
+  "carbon-fields/hero-insight": dynamic(() =>
+    import("./sections/globals/hero/HeroSection"),
+  ),
+  "carbon-fields/all-insights-showcase": dynamic(() =>
+    import("./sections/insights/articlesSection/ArticlesSection"),
+  ),
 
   // //////////////////////
   // our-work
   // //////////////////////
-  "carbon-fields/all-projects-showcase": OurWorkSection,
+  "carbon-fields/all-projects-showcase": dynamic(() =>
+    import("./sections/ourWork/ourWorkSection/OurWorkSection"),
+  ),
 
   // //////////////////////
   //  our-work details
   // //////////////////////
-  "carbon-fields/project-overview": OverviewSection,
-  "carbon-fields/project-scope": ProjectScope,
-  "carbon-fields/project-challenge": TheChallengeSection,
-  "carbon-fields/project-detail-entries": Resources,
-  "carbon-fields/project-solution": TheSolutionSection,
-  "carbon-fields/what-we-did": CaseStudyWhatWeDoSection,
-  "carbon-fields/project-results": TheResultsSection,
-  "carbon-fields/project-beyond-metrics": BeyondTheMatrixSection,
+  "carbon-fields/project-overview": dynamic(() =>
+    import("./sections/caseStudy/overview/OverviewSection"),
+  ),
+  "carbon-fields/project-scope": dynamic(() =>
+    import("./sections/caseStudy/projectScope/ProjectScope"),
+  ),
+  "carbon-fields/project-challenge": dynamic(() =>
+    import("./sections/caseStudy/theChallenge/TheChallengeSection"),
+  ),
+  "carbon-fields/project-detail-entries": dynamic(() =>
+    import("./sections/caseStudy/resources/Resources"),
+  ),
+  "carbon-fields/project-solution": dynamic(() =>
+    import("./sections/caseStudy/theSolutions/TheSolutionSection"),
+  ),
+  "carbon-fields/what-we-did": dynamic(() =>
+    import("./sections/caseStudy/whatWeDo/WhatWeDoSection"),
+  ),
+  "carbon-fields/project-results": dynamic(() =>
+    import("./sections/caseStudy/theResults/TheResultsSection"),
+  ),
+  "carbon-fields/project-beyond-metrics": dynamic(() =>
+    import("./sections/caseStudy/beyondTheMatrix/BeyondTheMatrixSection"),
+  ),
 
   // //////////////////////
   // contact-us
   // //////////////////////
-  "carbon-fields/contact-us": ContactUsGetInTouch,
+  "carbon-fields/contact-us": dynamic(() =>
+    import("./sections/contactUs/GetInTouch"),
+  ),
 
   // //////////////////////
   // thank you page
   // //////////////////////
-  "carbon-fields/thank-you-hero": ThankYouHeroSection,
+  "carbon-fields/thank-you-hero": dynamic(() =>
+    import("./sections/thankYou/HeroSection"),
+  ),
 
   // //////////////////////
   // core blocks
   // //////////////////////
-  "carbon-fields/core-paragraph": ParagraphSection,
-  "carbon-fields/stretchy-paragraph": ParagraphSection,
-  "carbon-fields/core-heading": HeadingSection,
-  "carbon-fields/stretchy-heading": HeadingSection,
-  "carbon-fields/core-list": ListSection,
-  "carbon-fields/core-quote": QuoteSection,
-  "carbon-fields/core-pullquote": QuoteSection,
-  "carbon-fields/core-code": CodeSection,
-  "carbon-fields/core-math": MathSection,
-  "carbon-fields/core-preformatted": PreformattedSection,
-  "carbon-fields/core-verse": VerseSection,
-  "carbon-fields/core-classic": ParagraphSection,
-  "carbon-fields/core-table": TableSection,
-  "carbon-fields/core-details": DetailsSection,
+  "carbon-fields/core-paragraph": dynamic(() =>
+    import("./sections/globals/paragraph/ParagraphSection"),
+  ),
+  "carbon-fields/stretchy-paragraph": dynamic(() =>
+    import("./sections/globals/paragraph/ParagraphSection"),
+  ),
+  "carbon-fields/core-heading": dynamic(() =>
+    import("./sections/globals/heading/HeadingSection"),
+  ),
+  "carbon-fields/stretchy-heading": dynamic(() =>
+    import("./sections/globals/heading/HeadingSection"),
+  ),
+  "carbon-fields/core-list": dynamic(() =>
+    import("./sections/globals/list/ListSection"),
+  ),
+  "carbon-fields/core-quote": dynamic(() =>
+    import("./sections/globals/quote/QuoteSection"),
+  ),
+  "carbon-fields/core-pullquote": dynamic(() =>
+    import("./sections/globals/quote/QuoteSection"),
+  ),
+  "carbon-fields/core-code": dynamic(() =>
+    import("./sections/globals/code/CodeSection"),
+  ),
+  "carbon-fields/core-math": dynamic(() =>
+    import("./sections/globals/math/MathSection"),
+  ),
+  "carbon-fields/core-preformatted": dynamic(() =>
+    import("./sections/globals/preformatted/PreformattedSection"),
+  ),
+  "carbon-fields/core-verse": dynamic(() =>
+    import("./sections/globals/verse/VerseSection"),
+  ),
+  "carbon-fields/core-classic": dynamic(() =>
+    import("./sections/globals/paragraph/ParagraphSection"),
+  ),
+  "carbon-fields/core-table": dynamic(() =>
+    import("./sections/globals/table/TableSection"),
+  ),
+  "carbon-fields/core-details": dynamic(() =>
+    import("./sections/globals/details/DetailsSection"),
+  ),
 };
 
 export default blockComponentsMapping;

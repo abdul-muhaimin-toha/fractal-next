@@ -195,6 +195,7 @@ function Header({ menuItems, themeOptions }) {
                   alt="Logo"
                   width={196}
                   height={95}
+                  priority={true}
                   className="h-auto w-full shrink-0"
                 />
               )}

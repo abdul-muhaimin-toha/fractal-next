@@ -36,7 +36,6 @@ function WhatWeDoSection({ data }) {
                               className="aspect-322/310 h-auto w-full object-cover"
                               width={322}
                               height={310}
-                              unoptimized={true}
                             />
                           ))}
                       </div>
@@ -88,7 +87,6 @@ function WhatWeDoSection({ data }) {
                               className="aspect-562/454 h-auto w-full object-cover"
                               width={562}
                               height={454}
-                              unoptimized={true}
                             />
                           )
                         )}

@@ -23,7 +23,6 @@ function ProjectSlide({ title, subtitle, image, href }) {
           alt={title || "Project image"}
           width={322}
           height={310}
-          unoptimized={true}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       )}

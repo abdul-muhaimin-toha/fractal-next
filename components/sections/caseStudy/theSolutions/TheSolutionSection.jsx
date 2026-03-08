@@ -40,7 +40,6 @@ function TheSolutionSection({ data }) {
                       className="h-full w-full object-contain"
                       width={562}
                       height={270}
-                      unoptimized={true}
                     />
                   </>
                 )}

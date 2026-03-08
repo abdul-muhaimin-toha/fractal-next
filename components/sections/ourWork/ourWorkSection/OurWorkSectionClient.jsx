@@ -24,7 +24,6 @@ function ProjectCard({ project }) {
             src={image}
             alt={title}
             fill
-            unoptimized={true}
           />
         )}
       </div>

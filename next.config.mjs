@@ -5,12 +5,6 @@ const nextConfig = {
     minimumCacheTTL: 31536000, // 1 year browser + CDN cache
 
     remotePatterns: [
-      // Staging
-      {
-        protocol: "https",
-        hostname: "staging.hellonotionhive.com",
-      },
-
       // Headless WP media
       {
         protocol: "https",

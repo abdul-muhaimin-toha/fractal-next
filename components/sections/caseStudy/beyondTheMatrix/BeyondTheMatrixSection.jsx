@@ -43,7 +43,6 @@ function BeyondTheMatrixSection({ data }) {
                   src={person_image}
                   width={310}
                   height={310}
-                  unoptimized={true}
                 />
               )}
               <div className="flex flex-col items-center justify-center gap-6 xl:gap-17.5">

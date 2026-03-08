@@ -81,6 +81,7 @@ export default async function HeroSection({ data }) {
           alt="Hero tree"
           width={360}
           height={606}
+          priority={true}
           className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:object-top-right md:hidden"
         />
         <Image
@@ -88,6 +89,7 @@ export default async function HeroSection({ data }) {
           alt="Hero tree"
           width={360}
           height={606}
+          priority={true}
           className="absolute top-0 right-0 bottom-0 left-0 z-0 hidden h-full w-full object-cover object-top-right md:block"
         />
       </div>

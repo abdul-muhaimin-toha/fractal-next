@@ -10,7 +10,6 @@ function ClientLogo({ src, alt }) {
         fill
         alt={alt || "Client logo"}
         src={src}
-        unoptimized={true}
       />
     </div>
   );

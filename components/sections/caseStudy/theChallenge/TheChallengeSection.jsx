@@ -41,7 +41,6 @@ function TheChallengeSection({ data }) {
                     className="h-full w-full object-cover"
                     width={562}
                     height={630}
-                    unoptimized={true}
                   />
                 </div>
               )}

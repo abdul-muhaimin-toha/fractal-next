@@ -49,7 +49,6 @@ export default async function FractalTeamSection({ data }) {
                           src={image}
                           width={320}
                           height={320}
-                          unoptimized={true}
                         />
                       )}
                     </div>

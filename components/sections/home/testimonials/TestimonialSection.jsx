@@ -107,7 +107,6 @@ function TestimonialItem({
             alt="Client image"
             width={228}
             height={228}
-            unoptimized={true}
             className="w-full h-full object-cover"
           />
         )}

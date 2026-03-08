@@ -94,7 +94,6 @@ function ArticleItem({ article }) {
             src={article.featuredImage.node.sourceUrl}
             alt={article.title}
             fill
-            unoptimized={true}
             className="object-cover duration-300 group-hover:scale-105"
           />
         </div>

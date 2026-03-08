@@ -120,6 +120,7 @@ export default async function InsightsSection({ data }) {
           alt="Insights background"
           width={360}
           height={606}
+          priority={true}
           className="absolute inset-0 z-0 h-full w-full object-cover object-bottom-right sm:hidden"
         />
         <Image
@@ -127,6 +128,7 @@ export default async function InsightsSection({ data }) {
           alt="Insights background"
           width={360}
           height={606}
+          priority={true}
           className="absolute inset-0 z-0 hidden h-full w-full object-cover object-bottom-right sm:block"
         />
       </div>
