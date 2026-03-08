@@ -47,6 +47,7 @@ export default async function HeroSection({ data }) {
     open_in_new_tab,
     custom_url,
     link_source,
+    bg_image,
   } = content;
 
   let buttonHref = "#";
@@ -76,20 +77,32 @@ export default async function HeroSection({ data }) {
         </div>
 
         {/* Hero Images */}
-        <Image
-          src="/home/hero-banner/fractal-tree-mobile.svg"
-          alt="Hero tree"
-          width={360}
-          height={606}
-          className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:object-top-right md:hidden"
-        />
-        <Image
-          src="/home/hero-banner/fractal-tree-desktop.svg"
-          alt="Hero tree"
-          width={360}
-          height={606}
-          className="absolute top-0 right-0 bottom-0 left-0 z-0 hidden h-full w-full object-cover object-top-right md:block"
-        />
+        {bg_image ? (
+          <Image
+            src={bg_image}
+            alt="Hero background"
+            fill
+            priority
+            className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover"
+          />
+        ) : (
+          <>
+            <Image
+              src="/home/hero-banner/fractal-tree-mobile.svg"
+              alt="Hero tree"
+              width={360}
+              height={606}
+              className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:object-top-right md:hidden"
+            />
+            <Image
+              src="/home/hero-banner/fractal-tree-desktop.svg"
+              alt="Hero tree"
+              width={360}
+              height={606}
+              className="absolute top-0 right-0 bottom-0 left-0 z-0 hidden h-full w-full object-cover object-top-right md:block"
+            />
+          </>
+        )}
       </div>
     </section>
   );

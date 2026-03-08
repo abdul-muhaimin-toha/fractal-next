@@ -27,7 +27,7 @@ function HeroSection({ data }) {
 
   if (!content) return null;
 
-  const { title, description } = content;
+  const { title, description, bg_image } = content;
 
   return (
     <section className="bg-dark relative mt-20.5 overflow-hidden lg:mt-33.5 xl:mt-43.75">
@@ -38,20 +38,32 @@ function HeroSection({ data }) {
         </div>
 
         {/* Hero Images */}
-        <Image
-          src="/about-us/hero/hero-mobile.svg"
-          alt="Hero tree"
-          width={360}
-          height={606}
-          className="absolute inset-0 z-0 h-full w-full object-cover object-bottom-right sm:hidden"
-        />
-        <Image
-          src="/insights/hero/bg-desktop.svg"
-          alt="Hero tree"
-          width={360}
-          height={606}
-          className="absolute inset-0 z-0 hidden h-full w-full object-contain object-bottom-right sm:block"
-        />
+        {bg_image ? (
+          <Image
+            src={bg_image}
+            alt="Hero background"
+            fill
+            priority
+            className="absolute inset-0 z-0 h-full w-full object-cover"
+          />
+        ) : (
+          <>
+            <Image
+              src="/about-us/hero/hero-mobile.svg"
+              alt="Hero tree"
+              width={360}
+              height={606}
+              className="absolute inset-0 z-0 h-full w-full object-cover object-bottom-right sm:hidden"
+            />
+            <Image
+              src="/insights/hero/bg-desktop.svg"
+              alt="Hero tree"
+              width={360}
+              height={606}
+              className="absolute inset-0 z-0 hidden h-full w-full object-contain object-bottom-right sm:block"
+            />
+          </>
+        )}
       </div>
     </section>
   );

@@ -47,7 +47,12 @@ export default async function HeroSection({ data }) {
     open_in_new_tab,
     custom_url,
     link_source,
+    bg_image,
   } = content;
+
+  console.log(bg_image);
+
+  
 
   let buttonHref = "#";
   if (link_source === "custom") {
@@ -61,6 +66,35 @@ export default async function HeroSection({ data }) {
 
   return (
     <section className="bg-dark relative mt-20.5 lg:mt-33.5 xl:mt-43.75">
+      {bg_image ? (
+        <Image
+          src={bg_image}
+          alt="Hero Background"
+          fill
+          priority={true}
+          className="z-0 object-cover"
+        />
+      ) : (
+        <>
+          {/* Default Hero Images */}
+          <Image
+            src="/home/hero-banner/fractal-tree-mobile.svg"
+            alt="Hero tree"
+            width={360}
+            height={606}
+            priority={true}
+            className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:object-top-right md:hidden"
+          />
+          <Image
+            src="/home/hero-banner/fractal-tree-desktop.svg"
+            alt="Hero tree"
+            width={360}
+            height={606}
+            priority={true}
+            className="absolute top-0 right-0 bottom-0 left-0 z-0 hidden h-full w-full object-cover object-top-right md:block"
+          />
+        </>
+      )}
       <div className="container-fractal">
         {/* Hero Content */}
         <div className="flex w-full flex-col items-start justify-center">
@@ -74,24 +108,6 @@ export default async function HeroSection({ data }) {
             />
           )}
         </div>
-
-        {/* Hero Images */}
-        <Image
-          src="/home/hero-banner/fractal-tree-mobile.svg"
-          alt="Hero tree"
-          width={360}
-          height={606}
-          priority={true}
-          className="absolute top-0 right-0 bottom-0 left-0 z-0 h-full w-full object-cover object-bottom-right sm:object-top-right md:hidden"
-        />
-        <Image
-          src="/home/hero-banner/fractal-tree-desktop.svg"
-          alt="Hero tree"
-          width={360}
-          height={606}
-          priority={true}
-          className="absolute top-0 right-0 bottom-0 left-0 z-0 hidden h-full w-full object-cover object-top-right md:block"
-        />
       </div>
     </section>
   );

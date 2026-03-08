@@ -21,10 +21,9 @@ function HeroContent({ title, description }) {
     </div>
   );
 }
-
 function HeroSection({ data }) {
   const content = data?.data || {};
-  const { title, description } = content;
+  const { title, description, bg_image } = content;
 
   return (
     <section className="bg-dark relative z-10 mt-20.5 overflow-hidden lg:mt-33.5 xl:mt-43.75">
@@ -35,20 +34,32 @@ function HeroSection({ data }) {
         </div>
       </div>
       {/* Hero Images */}
-      <Image
-        src="/about-us/hero/hero-mobile.svg"
-        alt="Hero tree"
-        width={360}
-        height={606}
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom-right sm:hidden"
-      />
-      <Image
-        src="/about-us/hero/hero-desktop.svg"
-        alt="Hero tree"
-        width={360}
-        height={606}
-        className="absolute inset-0 -z-10 hidden h-full w-full object-cover object-bottom-right sm:block"
-      />
+      {bg_image ? (
+        <Image
+          src={bg_image}
+          alt="Hero background"
+          fill
+          priority
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+      ) : (
+        <>
+          <Image
+            src="/about-us/hero/hero-mobile.svg"
+            alt="Hero tree"
+            width={360}
+            height={606}
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom-right sm:hidden"
+          />
+          <Image
+            src="/about-us/hero/hero-desktop.svg"
+            alt="Hero tree"
+            width={360}
+            height={606}
+            className="absolute inset-0 -z-10 hidden h-full w-full object-cover object-bottom-right sm:block"
+          />
+        </>
+      )}
     </section>
   );
 }
