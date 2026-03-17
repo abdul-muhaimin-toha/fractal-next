@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ArrowRightIcon from "@/components/globals/icons/ArrowRightIcon";
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Image from "next/image";
@@ -107,11 +107,27 @@ const ITEMS_PER_PAGE = 3;
 export default function ArticlesSectionClient({ insights, categories }) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const sectionRef = useRef(null);
 
   // Reset to page 1 when category changes
   useEffect(() => {
     setCurrentPage(1);
   }, [activeCategory]);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    if (sectionRef.current) {
+      // Ensure we smoothly scroll back to the top of the article section
+      const yOffset = -120; // Accounts for any fixed/sticky headers
+      const elementPosition = sectionRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY + yOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   const filteredArticles =
     activeCategory === "all"
@@ -128,7 +144,7 @@ export default function ArticlesSectionClient({ insights, categories }) {
   );
 
   return (
-    <div className="flex w-full flex-col items-center gap-20 py-40">
+    <div ref={sectionRef} className="flex w-full flex-col items-center gap-20 py-40">
       <CategoryTabs
         categories={categories}
         activeCategory={activeCategory}
@@ -146,7 +162,8 @@ export default function ArticlesSectionClient({ insights, categories }) {
           {currentPage > 1 && (
             <Button
               variant="border"
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              type="button"
+              onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
             >
               Prev
             </Button>
@@ -154,9 +171,8 @@ export default function ArticlesSectionClient({ insights, categories }) {
           {currentPage < totalPages && (
             <Button
               variant="border"
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-              }
+              type="button"
+              onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
             >
               Next
             </Button>
