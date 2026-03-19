@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { BodyText } from "@/components/globals/typography/BodyText";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,6 +48,22 @@ const ITEMS_PER_PAGE = 8;
 
 export default function OurWorkSectionClient({ projects }) {
   const [currentPage, setCurrentPage] = useState(1);
+  const sectionRef = useRef(null);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    if (sectionRef.current) {
+      // Ensure we smoothly scroll back to the top of the section
+      const yOffset = -120; // Accounts for any fixed/sticky headers
+      const elementPosition = sectionRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY + yOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   const safeProjects = Array.isArray(projects) ? projects : [];
   const totalPages = Math.ceil(safeProjects.length / ITEMS_PER_PAGE);
@@ -58,7 +74,7 @@ export default function OurWorkSectionClient({ projects }) {
   );
 
   return (
-    <div className="flex w-full flex-col gap-20 py-30 md:py-40">
+    <div ref={sectionRef} className="flex w-full flex-col gap-20 py-30 md:py-40">
       <div className="grid w-full grid-cols-1 gap-14 md:grid-cols-2 md:gap-x-5 md:gap-y-20">
         {paginatedProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
@@ -70,7 +86,8 @@ export default function OurWorkSectionClient({ projects }) {
           {currentPage > 1 && (
             <Button
               variant="border"
-              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              type="button"
+              onClick={() => handlePageChange(Math.max(currentPage - 1, 1))}
             >
               Prev
             </Button>
@@ -78,9 +95,8 @@ export default function OurWorkSectionClient({ projects }) {
           {currentPage < totalPages && (
             <Button
               variant="border"
-              onClick={() =>
-                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-              }
+              type="button"
+              onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages))}
             >
               Next
             </Button>
